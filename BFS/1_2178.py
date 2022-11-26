@@ -25,8 +25,8 @@ map = [list(map(int, input().strip())) for _ in range(n)]
 chk = [[False] * m for _ in range(n)]
 
 # 이동할 4가지 방향
-dy = [0,1,0,-1]
-dx = [1,0,-1,0]
+dy = [0, 1, 0, -1]
+dx = [1, 0, -1, 0]
 
 def bfs(y, x):
     q=deque()

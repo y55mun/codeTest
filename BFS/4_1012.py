@@ -1,60 +1,46 @@
-""" 백준 1012- 유기농 배추
-1. 아이디어
-
-
-2. 시간복잡도
-
-
-3. 자료구조
-
-
-"""
 import sys
 from collections import deque
-
-read = sys.stdin.readline
-
-# 이동할 4가지 방향
-dy = [0, 1, 0, -1]
-dx = [1, 0, -1, 0]
-
-
-
-def bfs(y,x):
+def bfs(y,x): # 영역 확인
     q = deque()
-    q.append((y, x))
+    q.append((y,x))
+    chk[y][x] = True
 
     while q:
         ey, ex = q.popleft()
 
-        for k in range(4):
+        for k in range(4): # 사방면 확인
             ny = ey + dy[k]
             nx = ey + dx[k]
+            if 0 <= ny < n and 0 <= nx < m:
+                if graph[ny][nx] == 1 and chk[ny][nx] == False:
+                    chk[ny][nx] = True
+                    q.append((ny,nx))
 
-            if 0 <= ny <n and 0 <= nx < m:
-                if graph[ny][nx] == 1:
-                    graph[ny][nx] = 0
-                    q.append((ny, nx))
 
-t = int(read())    # 테스트 케이스
-cnt = 0
+dy = [0, 1, 0, -1]  #w
+dx = [1, 0, -1, 0]  #h
 
-for _ in range(t):
+read = sys.stdin.readline
+T = int(read())
+
+for _ in range(T):
     m, n, k = map(int, read().split())
-    graph = [[0]*m for _ in range(n)]
-    #chk = [[False] * m for _ in range(n)]
-    #cnt = 0
+    graph = [[0] * m for _ in range(n)]
+    chk = [[False] * m for _ in range(n)]
 
-    for _ in range(k):
-        x,y = map(int, read().split())
+    result = 0
+
+    for _ in range(k):  # 배추 위치 입력
+        x, y = map(int, read().split())
         graph[y][x] = 1
 
-    cnt = 0
+
     for j in range(n):
         for i in range(m):
-            if graph[j][i] == 1:
-                #chk[j][i] = True
-                #graph[j][i] = 0
+            if graph[j][i] == 1 and chk[j][i] == False:
+                #graph[i][j] = 0
+                chk[j][i] = True
+                result += 1
                 bfs(j,i)
-                cnt += 1
-    print(cnt)
+            #result += 1
+    print(result)

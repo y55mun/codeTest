@@ -1,3 +1,8 @@
+"""
+계속 index 오류 발생했던 원인: bfs 함수에서 nx = ex + dx[k] 부분에서 ey 라고 적어서 계속 index 오류가 났다.
+
+"""
+
 import sys
 from collections import deque
 

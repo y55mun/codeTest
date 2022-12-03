@@ -1,6 +1,5 @@
 from collections import deque
 
-
 def bfs(i, j):
     queue = deque()
     queue.append((i, j))
@@ -31,4 +30,4 @@ for i in range(M):
             graph[i][j] = 1
             res.append(bfs(i, j))
 print(len(res))
-print(*sorted(res))
+print( *sorted(res) )

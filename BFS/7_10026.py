@@ -1,52 +1,45 @@
+import sys
 from collections import deque
+input = sys.stdin.readline
+sys.setrecursionlimit(10**6)
 
-def bfs(y,x):
+def bfs(x, y):
+    visited[x][y] = 1
     q = deque()
-    q.append((y,x))
-
-    dy = [0,1,0,-1]
-    dx = [1,0,-1,0]
-
+    q.append((x, y))
     while q:
-        ey, ex = q.popleft()
+        x, y = q.popleft()
+        dxdy = [(0, -1), (0, 1), (-1, 0), (1, 0)]
+        for dx, dy in dxdy:
+            nx = x + dx
+            ny = y + dy
+            if -1 < nx < n and -1 < ny < n:
+                if grid[nx][ny] == grid[x][y] and not visited[nx][ny]:
+                    visited[nx][ny] = 1
+                    q.append((nx, ny))
 
-        for k in range(4):
-            ny = ey + dy[k]
-            nx = ex + dx[k]
+n = int(input())
+grid = [list(map(str, input().strip())) for _ in range(n)]
+visited = [[0 for _ in range(n)] for _ in range(n)]
 
-            if 0<=ny<N and 0<=nx<N:
-                if a[ny][nx] == a[y][x] and visited[ny][nx] == False:
-                    visited[ny][nx] = True
-                    q.append((ny, nx))
+ncw = 0 #색약 x
+for i in range(n):
+    for j in range(n):
+        if not visited[i][j]:
+            bfs(i, j)
+            ncw += 1
+print(ncw, end=' ')
 
+cw = 0 #색약
+visited = [[0 for _ in range(n)] for _ in range(n)]
+for i in range(n):
+    for j in range(n):
+        if grid[i][j] == 'R':
+            grid[i][j] = 'G'
 
-
-N = int(input())
-a = [list(input()) for _ in range(N)]
-
-visited = [[False] * N for _ in range(N)]
-
-# 적록색약 아닌 경우
-cnt1 = 0
-for j in range(N):
-    for i in range(N):
-        if visited[j][i] == False:
-            bfs(j,i)
-            cnt1 += 1
-
-# 적록색약인 경우
-for j in range(N):
-    for i in range(N):
-        if a[j][i] == 'G':
-            a[j][i] == 'R'
-
-
-visited = [[False] * N for _ in range(N)]
-cnt2 = 0
-for j in range(N):
-    for i in range(N):
-        if visited[j][i] == False:
-            bfs(j,i)
-            cnt2 += 1
-
-print(cnt1, cnt2)
+for i in range(n):
+    for j in range(n):
+        if not visited[i][j]:
+            bfs(i, j)
+            cw += 1
+print(cw)

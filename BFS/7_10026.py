@@ -14,7 +14,7 @@ def bfs(y,x):
             ny = ey + dy[k]
             nx = ex + dx[k]
 
-            if 0<=ny<n and 0<=nx<n:
+            if 0<=ny<N and 0<=nx<N:
                 if a[ny][nx] == a[y][x] and visited[ny][nx] == False:
                     visited[ny][nx] = True
                     q.append((ny, nx))
@@ -37,7 +37,7 @@ for j in range(N):
 # 적록색약인 경우
 for j in range(N):
     for i in range(N):
-        if[j][i] == 'G':
+        if a[j][i] == 'G':
             a[j][i] == 'R'
 
 

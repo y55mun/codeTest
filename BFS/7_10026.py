@@ -45,7 +45,7 @@ visited = [[False] * N for _ in range(N)]
 cnt2 = 0
 for j in range(N):
     for i in range(N):
-        if visited[j][i]:
+        if visited[j][i] == False:
             bfs(j,i)
             cnt2 += 1
 

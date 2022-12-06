@@ -14,3 +14,14 @@
 - 결과값: int[]
 
 """
+import sys
+input = sys.stdin.readline
+
+N = int(input())
+map = [list(map(int, input().strip())) for _ in range(N)]
+chk = [[False] * N for _ in range(N)]
+result = []
+each = 0
+
+dy = [0,1,0,-1]
+dx = [1,0,-1,0]

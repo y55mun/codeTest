@@ -19,9 +19,17 @@ input = sys.stdin.readline
 
 N = int(input())
 map = [list(map(int, input().strip())) for _ in range(N)]
-chk = [[False] * N for _ in range(N)]
+visited = [[False] * N for _ in range(N)]
 result = []
 each = 0
 
 dy = [0,1,0,-1]
 dx = [1,0,-1,0]
+
+for j in range(N):
+    for i in range(N):
+        if map[j][i] == 1 and not visited[j][i]:
+            visited[j][i] = True
+            each = 0
+            dfs(j,i)
+            result.append(each)

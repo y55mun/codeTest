@@ -33,3 +33,8 @@ for j in range(N):
             each = 0
             dfs(j,i)
             result.append(each)
+
+result.sort()
+print(len(result))
+for i in result:
+    print(i)

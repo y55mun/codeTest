@@ -1,8 +1,8 @@
 """ 백준 9095: 1, 2, 3 더하기
-* 풀이 날짜: 2022-12-07
+* 풀이 날짜: 2022-12-09
 
 1. 아이디어
-피보나치 수열의 점화식 이용!
+재귀 형식으로 풀기
 
 2. 시간복잡도
 
@@ -12,22 +12,24 @@
 
 """
 
-import sys
-input = sys.stdin.readline
+def solve(n):
+    global cnt
+    global k
+    for i in arr:
+        res.append(i)
+        if sum(res) == n:
+            res.pop()
+            cnt += 1
+            break
+        solve(n)
+        res.pop()
+    return cnt
 
-t = int(input())    # 테스트 케이스 개수
 
-def dfs(n):
-    if arr[n] > 0 : return arr[n]
-    if n == 1: return 1
-    elif n == 2: return 2
-    elif n == 3: return 4
-    else:
-        arr[n] = dfs(n-1) + dfs(n-2) + dfs(n-3)
-        return arr[n]
-
-
-for _ in range(t):
-    n = int(input())  # 정수
-    arr = [0] * (n+1)
-    print(dfs(n))
+T = int(input())
+for _ in range(T):
+    n = int(input())
+    arr = [1, 2, 3]
+    res = []
+    cnt = 0
+    print(solve(n))

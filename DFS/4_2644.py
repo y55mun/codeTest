@@ -15,3 +15,19 @@ for _ in range(m):
 result = []
 cnt = 0
 
+
+def dfs(graph, v, visited):
+    global cnt
+    cnt += 1
+    visited[v] = True
+
+    if v == b:
+        result.append(cnt)
+
+    for i in graph[v]:
+        if not visited[i]:
+            dfs(graph, i, visited)
+
+
+dfs(graph, a, visited)
+

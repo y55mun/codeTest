@@ -31,3 +31,7 @@ def dfs(graph, v, visited):
 
 dfs(graph, a, visited)
 
+if len(result) == 0:
+    print(-1)
+else:
+    print(result[0] - 1)

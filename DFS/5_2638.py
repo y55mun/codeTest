@@ -38,8 +38,8 @@ while True:
         break
         visit = [[0 for _ in range(m)] for _ in range(n)]
 
-        dx=[1,-1,0,0]
-        dy=[0,0,1,-1]
+        dy = [0, 1, 0, -1]
+        dx = [1, 0, -1, 0]
         visit[0][0] = 1
         dfs(cheese, n, m, 0,0)
         cheese = remove_cheese(cheese, n, m)

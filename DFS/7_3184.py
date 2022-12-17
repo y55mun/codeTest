@@ -1,3 +1,8 @@
+"""
+- 풀이 날짜: 2022-12-18
+DFS를 통해 영역을 구분짓고, 각 영역에 있는 양과 늑대 수를 비교하여 계산
+"""
+
 import sys
 sys.setrecursionlimit(10 ** 6)
 r, c = map(int, input().split())

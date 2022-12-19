@@ -1,55 +1,62 @@
-import sys
+n, m = map(int, input().split())
+data = [] # 초기 맵 리스트
+temp = [[0] * m for _ in range(n)] # 벽을 설치한 뒤의 맵 리스트
 
-n,m = map(int, input().split())
-lab = [list(map(int, input().split())) for _ in range(n)]
-tmp = [[0]*m for _ in range(n)]
+for _ in range(n):
+    data.append(list(map(int, input().split())))
 
-dy = [0,1,0,-1]
-dx = [1,0,-1,0]
+# 4가지 이동 방향에 대한 리스트
+dx = [-1, 0, 1, 0]
+dy = [0, 1, 0, -1]
 
-def virus(y,x):
-    for k in range(4):
-        ny = y + dy[k]
-        nx = x + dx[k]
+result = 0
 
-        if 0<=ny<m and 0<=nx<n:
-            if tmp[ny][nx] == False:
-                tmp[ny][nx] =2
-                virus(ny,nx)
+# 깊이 우선 탐색(DFS)을 이용해 각 바이러스가 사방으로 퍼지도록 하기
+def virus(x, y):
+    for i in range(4):
+        nx = x + dx[i]
+        ny = y + dy[i]
+        # 상, 하, 좌, 우 중에서 바이러스가 퍼질 수 있는 경우
+        if nx >= 0 and nx < n and ny >= 0 and ny < m:
+            if temp[nx][ny] == 0:
+                # 해당 위치에 바이러스 배치하고, 다시 재귀적으로 수행
+                temp[nx][ny] = 2
+                virus(nx, ny)
 
+# 현재 맵에서 안전 영역의 크기 계산하는 메서드
+def get_score():
+    score = 0
+    for i in range(n):
+        for j in range(m):
+            if temp[i][j] == 0:
+                score += 1
+    return score
 
-def Count():
-    cnt = 0
-    for j in range(m):
-        for i in range(n):
-            if tmp[j][i] == 0:
-                cnt += 1
-    return cnt
-
-
-def DFS(count):
+# 깊이 우선 탐색(DFS)을 이용해 울타리를 설치하면서, 매 번 안전 영역의 크기 계산
+def dfs(count):
     global result
+    # 2. 울타리가 3개 설치된 경우 바이러스 전파
     if count == 3:
-        for j in range(m):
-            for i in range(n):
-                tmp[j][i] = lab[j][i]
-                # tmp[i].append(lab[i][j])
-
-        for j in range(m):
-            for i in range(n):
-                if tmp[i][j]==2:
-                    virus(j, i)
-        result = max(result, Count())
+        for i in range(n):
+            for j in range(m):
+                temp[i][j] = data[i][j]
+        # 각 바이러스의 위치에서 전파 진행
+        for i in range(n):
+            for j in range(m):
+                if temp[i][j] == 2:
+                    virus(i, j)
+        # 3. 안전 영역의 최대값 계산
+        result = max(result, get_score())
         return
-    else:
+    # 1. 빈 공간에 울타리를 설치
+    for i in range(n):
         for j in range(m):
-            for i in range(n):
-                if lab[j][i] == 0:
-                    lab[j][i]=1
-                    count+=1
-                    DFS(count)
-                    lab[j][i]=0
-                    count-=1
-result=0
-DFS(0)
+            if data[i][j] == 0:
+                data[i][j] = 1
+                count += 1
+                dfs(count)
+                data[i][j] = 0
+                count -= 1
+
+dfs(0)
 print(result)

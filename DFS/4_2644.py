@@ -15,10 +15,10 @@ for _ in range(m):
 result = []
 cnt = 0
 
-
+# A부터 시작하여 B까지 도달하는 거리가 촌수
 def dfs(graph, v, visited):
     global cnt
-    cnt += 1
+    cnt += 1    # DFS를 재귀적으로 구연하여 재귀 깊이가 깊어질 때 num의 값을 +1
     visited[v] = True
 
     if v == b:

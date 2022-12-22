@@ -21,6 +21,8 @@ def dfs(graph, v, visited):
     cnt += 1    # DFS를 재귀적으로 구연하여 재귀 깊이가 깊어질 때 num의 값을 +1
     visited[v] = True
 
+
+
     if v == b:
         result.append(cnt)
 

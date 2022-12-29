@@ -8,16 +8,22 @@ def bfs(x, y):
     o, v = 0, 0
     while queue:
         x, y = queue.pop()
+
+        # 늑대일 경우 w에 1 추가
         if board[x][y] == 'v':
             v += 1
+
+        # 양 일 경우 o에 1 추가
         if board[x][y] == 'o':
             o += 1
+
         board[x][y] = '#'
 
         for i in range(4):
             nx = x + dx[i]
             ny = y + dy[i]
 
+            # 마당 범위 안에 있고, 방문하지 않았고, #이 아니면 BFS
             if 0 <= nx < M and 0 <= ny < N:
                 if board[nx][ny] != '#':
                     queue.append((nx, ny))
@@ -30,7 +36,7 @@ def bfs(x, y):
 
 M, N = map(int, input().split())
 board = [list(input()) for _ in range(M)]
-O, V = 0, 0
+O, V = 0, 0     # O: 양, V: 늑대
 for i in range(M):
     for j in range(N):
         if board[i][j] == 'v' or board[i][j] == 'o':
@@ -38,4 +44,4 @@ for i in range(M):
             O += o
             V += v
 
-print(O, V)
+print(O, V)     # 양, 늑대 출력

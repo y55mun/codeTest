@@ -16,3 +16,11 @@ d[1], d[2], d[3] = 1, 2, 4
 for i in range(4, len(d)):
     d[i] = d[i-1] + d[i-2] + d[i-3]
 
+# 테스트 케이스 만큼 반복
+for _ in range(t):
+
+    #정수 n 입력
+    n = int(input())
+
+    #정수 n을 1,2,3의 합으로 나타내는 방법의 수를 출력
+    print(d[n])

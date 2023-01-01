@@ -2,6 +2,8 @@ n, m = map(int, input().split())
 data = [] # 초기 맵 리스트
 temp = [[0] * m for _ in range(n)] # 벽을 설치한 뒤의 맵 리스트
 
+
+
 for _ in range(n):
     data.append(list(map(int, input().split())))
 

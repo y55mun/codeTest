@@ -21,3 +21,7 @@ K번째 큰 수
 # 출력예제 1
 143
 '''
+
+import sys
+
+n, k = map(int, input().split())

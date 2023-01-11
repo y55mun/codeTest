@@ -23,7 +23,6 @@ K번째 큰 수
 '''
 
 import sys
-import random
 
 n, k = map(int, input().split())
 a = list(map(int, input().split()))

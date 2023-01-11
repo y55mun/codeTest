@@ -23,5 +23,25 @@ K번째 큰 수
 '''
 
 import sys
+import random
+
+ans = []    # 리스트에서 추출한 숫자들의 합
 
 n, k = map(int, input().split())
+
+for _ in range(n):
+    cards = list(map(int, input().split()))
+
+    for _ in range(k):
+        choicelist = [random.choice(cards) for i in range(3)]   # 리스트에서 다수 랜덤 추출 (중복허용)
+        ans = sum(choicelist)
+       #ans.sort(reverse=True)
+
+        print(choicelist)
+        print(ans)
+        #print(ans[k])
+
+
+#for j in range(k):
+#    ans = sum(choicelist)
+#    print(ans)

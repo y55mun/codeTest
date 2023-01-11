@@ -27,12 +27,24 @@ import math
 
 n = int(input())
 scores = list(map(int, input().split()))
-ans = []
 
 avg = round(sum(scores) / n)
 
-for i in range(n):
-    ans = scores - avg
-    print(ans)
+min = 2147000000    # int 4바이트에서 가장 큰 수
 
-print(avg)
+for idx, x in enumerate(scores):
+    tmp = abs(x - avg)  # (학생점수 - 평균) 의 절대값. 학생점수와 평균과의 거리
+
+    # |학생 점수 - 평균|의 최소값 구하기 = 평균과 가장 가까운 값
+    if tmp < min:
+        min = tmp
+        score = x   # 학생 점수 최소값 저장할 변수
+        res = idx + 1   # 인덱스 저장
+
+    # 평균과 가장 가까운 값 중에서 73, 75의 경우 둘 다 평균값인 74와 거리가 1이므로 이를 판별해줘야함
+    elif tmp == min:
+        if x > score:    # 학생점수 최대값 구하기 : 75 > 73
+            score = x   # 학생점수 최대값 75 저장
+            res = idx + 1   # 학생점수 최대값 인덱스
+
+print(avg, res)

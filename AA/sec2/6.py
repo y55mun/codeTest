@@ -30,22 +30,16 @@ cases = list(map(int, input().split()))
 ans = []
 
 def digit_sum(x):
-    # y = len(x)
-    #
-    # z = x % 10^(y-1)    # 나머지
-    #
-    #
-    # if( z != 0):
-    #     a.append(z)
-    #     digit_sum(z)
-    #
-    # else:    a.append(z)
-    # print(a)
-    for i in range(len(x)):
-        ans += x[i]
-    return ans
+    sum = 0
 
-digit_sum(cases)
+    for i in str(x):
+        sum += int(i)
+
+
+for x in cases:
+    total = digit_sum(x)
+
+    if total > max:
+        max = total
+        ans = x
 print(ans)
-
-

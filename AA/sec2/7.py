@@ -22,16 +22,13 @@
 import sys
 
 n = int(input())
-ans = []
+ch = [0] * (n+1)
+cnt = 0
 
-for i in range(1, n+1):
+for i in range(2, n+1):
+    if ch[i] ==0:
+        cnt += 1
+        for j in range(i, n+1, i):
+            ch[j] = 1
 
-    if n == 1:
-        ans.append(n)
-    elif n % i == 0:  # 약수
-        # if i == 1 and i == n:
-        #     break
-        # else:
-            ans.append(n)
-
-print(ans)
+print(cnt)

@@ -18,3 +18,20 @@
 
 
 '''
+
+import sys
+
+n = int(input())
+ans = []
+
+for i in range(1, n+1):
+
+    if n == 1:
+        ans.append(n)
+    elif n % i == 0:  # 약수
+        # if i == 1 and i == n:
+        #     break
+        # else:
+            ans.append(n)
+
+print(ans)

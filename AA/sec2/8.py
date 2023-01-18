@@ -40,7 +40,8 @@ def reverse(x):
 
     return res
 
-reverse(number)
+for x in number:
+    tmp = reverse(x)
 
 
 # 소수인지 판별

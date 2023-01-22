@@ -41,7 +41,10 @@ def countSame(x):
     for i in x:
         try: new[i] += 1
         except: new[i] = 1
+
+
     print(new)
+    print(new[i])
 
 for _ in range(n):
     a = list(map(int, input().split()))

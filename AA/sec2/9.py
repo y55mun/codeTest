@@ -32,22 +32,17 @@ N 명이 주사위 게임에 참여하였을 때, 가장 많은 상금을 받은
 import sys
 
 n = int(input())    # 참여하는 사람 수
-count = [0] * n
-
-
-# 같은 눈의 주사위 수를 카운트 하는 함수
-def countSame(x):
-    new  = {}
-    for i in x:
-        try: new[i] += 1
-        except: new[i] = 1
-
-
-    print(new)
-    print(new[i])
 
 for _ in range(n):
-    a = list(map(int, input().split()))
-    countSame(a)
+    tmp = input().split()
+    tmp.sort()
+    a,b,c = map(int, tmp)
 
-
+    if a==b and b==c:
+        money = 10000 + (a*1000)
+    elif a==b or a==c:
+        money = 1000 + (a*100)
+    elif b==c:
+        money = 1000 + (b* 100)
+    else:
+        money = c * 100

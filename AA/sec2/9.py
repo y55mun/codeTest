@@ -32,6 +32,7 @@ N 명이 주사위 게임에 참여하였을 때, 가장 많은 상금을 받은
 import sys
 
 n = int(input())    # 참여하는 사람 수
+res = 0
 
 for _ in range(n):
     tmp = input().split()
@@ -46,3 +47,7 @@ for _ in range(n):
         money = 1000 + (b* 100)
     else:
         money = c * 100
+    if money > res:
+        res = money
+
+print(res)

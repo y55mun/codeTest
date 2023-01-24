@@ -30,9 +30,22 @@ OX 문제는 맞거나 틀린 두 경우의 답을 가지는 문제를 말한다
 import sys
 
 n = int(input())  # 문제의 개수
-res = 0
+res = list(map(int, input().split()))
+cnt = 0     # 가산점
+sum = 0
 
-for i in range(n):
-    res = input().split()
 
-    print(res)
+for x in res:
+
+    if x == 1:
+        cnt += 1
+        sum = sum + cnt
+    else:
+        cnt = 0
+
+print(sum)
+
+
+
+
+

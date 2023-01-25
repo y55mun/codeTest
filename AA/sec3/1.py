@@ -33,9 +33,9 @@ for i in range(1, n+1):
     words = input()
     words = words.upper()
 
-    for j in range(len(words) // 2):
-        if words[j] != words[-1-j]:
-            print("#%d No" %i)
+    for j in range(len(words) // 2):    # 0부터 문자열 길이의 절반만큼 반복
+        if words[j] != words[-1-j]:     # 왼쪽 문자와 오른쪽 문자를 비교하여 문자가 다르면
+            print("#%d No" %i)      # 회문 문자열이 아님을 print
             break
     else:
         print("#%d YES" %i)

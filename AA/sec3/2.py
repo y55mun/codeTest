@@ -19,7 +19,6 @@ g0en2Ts8eSoft
 6
 
 """
-import re
 
 words = input()
 
@@ -31,7 +30,7 @@ for num in words:
 words_to_num = ''.join(words_to_num)
 
 if words_to_num[0] == '0':
-    words_to_num = words_to_num[1:] # 첫번째 문자를 제외한 전체 문자열을 가져옴
+    words_to_num = words_to_num.lstrip("0")
 
 # 약수의 개수 구하기
 cnt = 0

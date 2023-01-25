@@ -35,7 +35,7 @@ for i in range(1, n+1):
 
     for j in range(len(words) // 2):
         if words[j] != words[-1-j]:
-            print("#%d No" %j)
+            print("#%d No" %i)
             break
     else:
-        print("#%d YES" %j)
+        print("#%d YES" %i)

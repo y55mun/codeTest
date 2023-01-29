@@ -27,4 +27,5 @@
 1 2 3 4 10 9 8 7 13 12 11 5 6 14 15 16 17 18 19 20
 
 """
-cards = [i for i in range(21)]
+cards = [i for i in range(1, 21)]
+

@@ -21,3 +21,14 @@
 1 2 3 3 5 6 7 9
 
 """
+import sys
+
+for _ in range(2):
+    n = int(input())
+    a = input().split()
+    m = int(input())
+    b = input().split()
+
+    c= a+b
+    c.sort()
+    print(c)

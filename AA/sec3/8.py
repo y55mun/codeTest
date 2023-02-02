@@ -34,3 +34,9 @@ M개의 회전명령을 실행하고 난 후 아래와 같이 마당의 모래�
 362
 
 """
+import sys
+
+n= int(input())
+a = [list(map(int, input().split())) for _ in range(n)]
+m = int(input())    # 회전 명령 갯수
+b = [list(map(int, input().split())) for _ in range(m)]

@@ -36,7 +36,7 @@ M개의 회전명령을 실행하고 난 후 아래와 같이 마당의 모래�
 """
 import sys
 
-n= int(input())
+n = int(input())
 a = [list(map(int, input().split())) for _ in range(n)]
 m = int(input())    # 회전 명령 갯수
 
@@ -52,3 +52,18 @@ for i in range(m):
     else:
         for _ in range(k):
             a[h-1].insert(0, a[h-1].pop())
+
+s=0
+e=n
+res=0
+for i in range(n):
+    for j in range(s,e):
+        res += a[i][j]
+
+    if i < n//2:
+        s += 1
+        e -= 1
+    else:
+        s -= 1
+        e += 1
+print(res)

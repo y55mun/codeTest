@@ -39,4 +39,16 @@ import sys
 n= int(input())
 a = [list(map(int, input().split())) for _ in range(n)]
 m = int(input())    # 회전 명령 갯수
-b = [list(map(int, input().split())) for _ in range(m)]
+
+for i in range(m):
+    h, t, k = map(int, input().split())
+
+    # 왼쪽
+    if t == 0:
+        for _ in range(k):
+            a[h-1].append(a[h-1].pop(0))
+
+    # 오른쪽
+    else:
+        for _ in range(k):
+            a[h-1].insert(0, a[h-1].pop())

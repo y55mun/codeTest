@@ -41,7 +41,7 @@ a = [list(map(int, input().split())) for _ in range(n)]
 m = int(input())    # 회전 명령 갯수
 
 for i in range(m):
-    h, t, k = map(int, input().split())
+    h, t, k = map(int, input().split())     # 회전할 행, 방향, 칸 수
 
     # 왼쪽
     if t == 0:
@@ -53,17 +53,17 @@ for i in range(m):
         for _ in range(k):
             a[h-1].insert(0, a[h-1].pop())
 
-s=0
-e=n
+s=0 # 시작
+e=n # 끝
 res=0
 for i in range(n):
-    for j in range(s,e):
+    for j in range(s,e):    # 모래시계 모양은 처음과 끝에서 시작
         res += a[i][j]
 
-    if i < n//2:
-        s += 1
-        e -= 1
-    else:
-        s -= 1
-        e += 1
+    if i < n//2:    # 절반을 기준으로 위에 있는 행들의 경우
+        s += 1  # 왼쪽은 더해주고
+        e -= 1  # 오른쪽은 빼준다
+    else:  # 절반을 기준으로 밑에 있는 행들의 경우
+        s -= 1  # 왼쪽은 빼주고
+        e += 1  # 오른쪽은 더해준다
 print(res)

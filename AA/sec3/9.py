@@ -23,7 +23,25 @@
 10
 
 """
-
 n = int(input())
 a = [list(map(int, input().split())) for _ in range(n)]
+
+dy = [0, 1, 0, -1]
+dx = [1, 0, -1, 0]
+
+cnt = 0
+
+# 격자의 가장자리에 0 추가
+a.insert(0, [0]*(n+2))
+a.insert(len(a), [0]*(n+2))     # 맨 아랫줄에 0 추가
+for i in range(1, n+1):
+    a[i].insert(0, 0)
+    a[i].append(0)  # 각 리스트의 마지막 원소에 0 추가
+
+for i in range(1, n+1):
+    for j in range(1, n+1):
+        if all(a[i][j] > a[i+dx[k]][j+dy[k]] for k in range(4)):
+            cnt += 1
+print(cnt)
+
 

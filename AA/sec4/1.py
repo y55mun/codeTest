@@ -18,13 +18,22 @@
 3
 
 """
+
 import sys
 
 n, m = map(int, input().split())
-a = [list(map(int, input().split()))]	# 이렇게 하니까 정렬 안됐음
+a = list(map(int, input().split()))
+s = 0
+e = len(a) - 1
 
 a.sort()
 
-
-
-print(a)
+while s <= e:
+    mid = (s+e)//2
+    if a[mid] == m:
+        print(mid+1)
+        break
+    elif a[mid] > m:
+        e = mid - 1
+    else:
+        s = mid + 1

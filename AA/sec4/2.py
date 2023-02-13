@@ -34,16 +34,16 @@ k, n = map(int, input().split())
 LAN = [int(input()) for _ in range(k)]
 s, e = 1, max(LAN)
 
-while s <= e:
+while s <= e:    #적절한 랜선의 길이를 찾는 알고리즘
     mid = (s+e) // 2
     num = 0 # 랜선 갯수
 
     for i in LAN:
-        num += i//mid
+        num += i//mid   #분할 된 랜선 수
 
-    if num >= n:
-        s = mid + 1
-    else:
-        e = mid - 1
+    if num >= n:    #랜선의 갯수가 딱 맞거나 더 많이 나온 경우
+        s = mid + 1     # 랜선 길이를 늘림
+    else:       # 랜선의 갯수가 기준보다 작게 나온 경우
+        e = mid - 1     # 랜선의 길이를 줄여야 하므로, 랜선 길이의 탐색 범위를 작게 해줌
 
 print(e)

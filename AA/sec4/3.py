@@ -28,31 +28,29 @@ DVD를 가급적 줄이려고 한다. 고민 끝에 지니레코드는 M개의 D
 
 def Count(capacity):
     cnt = 1
-    sum = 0
+    sum = 0	# DVD에 저장되는 노래들
 
     for x in Music:
-        if sum+x > capacity:
-            cnt += 1
+        if sum+x > capacity:    # x곡은 용량이 초과 되어 넘어갔으니 더이상 저장 불가능
+            cnt += 1    # 새로운 DVD가 필요함
             sum = x
-        else:
+        else:   # 용량이 초과 되지 않았으니 저장 가능
             sum += x
-    return cnt
-
-
+    return cnt  # DVD 갯수 리턴
 
 n,m = map(int, input().split())
 Music = list(map(int, input().split()))
-maxx = max(Music)
+maxx = max(Music)   # 반례를 위한 조건 추가
 
 lt = 1
 rt = sum(Music)
 
 while lt <= rt:
     mid = (lt+rt)//2
-    if mid >= maxx and Count(mid) <= m:
+    if mid >= maxx and Count(mid) <= m:     # 반례로 조건 추가: 노래 중에 가장 긴 노래 보다는 DVD 1개의 용량이 크거나 같아야 함
         res = mid
         rt = mid - 1
-    else:
+    else:   # 용량이 작아서 더 큰게 필요하니까 작은쪽을 늘려줌
         lt = mid + 1
 
 print(res)

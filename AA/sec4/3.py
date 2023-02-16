@@ -25,33 +25,34 @@ DVD를 가급적 줄이려고 한다. 고민 끝에 지니레코드는 M개의 D
 17
 
 """
-def Count(len):
-    cnt=0
-    for x in Line:
-        cnt+=(x//len)
+
+def Count(capacity):
+    cnt = 1
+    sum = 0
+
+    for x in Music:
+        if sum+x > capacity:
+            cnt += 1
+            sum = x
+        else:
+            sum += x
     return cnt
 
 
-n,m = map(int, input().split())
-# a = [list(map(int, input().split()))]
-Line = []
-res = 0
-minimum = 0
 
-for i in range(n):
-    tmp = map(int, input().split())
-    Line.append(tmp)
-    minimum = min(minimum, tmp)
+n,m = map(int, input().split())
+Music = [list(map(int, input().split()))]
+maxx = max(Music)
 
 lt = 1
-rt = minimum
+rt = sum(Music)
 
 while lt <= rt:
     mid = (lt+rt)//2
-    if Count(mid) >= m:
+    if mid >= maxx and Count(mid) <= m:
         res = mid
-        lt = mid + 1
+        rt = mid - 1
     else:
-        rt = mid -1
+        lt = mid + 1
 
 print(res)

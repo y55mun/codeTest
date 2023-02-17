@@ -24,10 +24,14 @@ C마리의 말을 N개의 마구간에 배치했을 때 가장 가까운 두 말
 
 """
 
-def Count(len):
-    cnt = 0
-    for x in horses:
-        cnt += (x//len)
+def Count(len): # 말이 들어있는 마구간 갯수
+    cnt = 1
+    ep = horses[0]
+
+    for i in range(1,n):
+        if horses[i]-ep >= len:
+            cnt += 1
+            ep = horses[i]
     return cnt
 
 n, c = map(int, input().split())

@@ -39,10 +39,11 @@ largest = 0
 for i in range(n):
     tmp = int(input())
     horses.append(tmp)
-    largest = max(largest, tmp)
+    # largest = max(largest, tmp)
 
+horses.sort()   #
 lt = 1
-rt = largest
+rt = horses[n-1]   #
 
 while lt<=rt:
     mid = (lt+rt)//2

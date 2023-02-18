@@ -37,8 +37,8 @@ while s <= e:
 
     tot = 0
     for i in n_list:
-        if n > mid:
-            tot += n - mid
+        if i > mid:
+            tot += i - mid
 
     if tot < m:
         e = mid - 1

@@ -29,5 +29,21 @@ A. N이 아무리 큰 수여도, K로 계속 나눈다면 기하급수적으로 
 다시 말해 K가 2 이상이기만 하면, K로 나누는것이 1을 빼는 것 보다 항상 빠르게 N을 줄일 수 있다.
 또한 N은 항상 1에 도달하게 된다. (최적의 해 성립)
 """
+n, k = map(int, input().split())
 
+result = 0
+
+while True:
+    target = (n//k) * k
+    result += (n-target)
+    n = target
+
+    if n < k:
+        break
+
+    result += 1
+    n //= k
+
+result += (n-1)
+print(result)
 

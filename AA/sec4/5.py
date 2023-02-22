@@ -29,3 +29,9 @@ cf) 예제설명
 
 
 """
+
+n = int(input())
+time = []
+for i in range(n):
+    s, e = map(int, input().split())
+    time.append([s, e])

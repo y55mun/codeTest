@@ -16,8 +16,7 @@
 1 4
 2 3
 3 5
-4 6.
-
+4 6
 5 7
 
 ▣ 출력예제 1
@@ -30,8 +29,16 @@ cf) 예제설명
 
 """
 
-n = int(input())
-time = []
-for i in range(n):
-    s, e = map(int, input().split())
-    time.append([s, e])
+data = input()
+
+result = int(data[0])
+
+for i in range(1, len(data)):
+
+    num = int(data[i])
+    if num <= 1 or result <= 1:
+        result += num
+    else:
+        result *= num
+
+print(result)

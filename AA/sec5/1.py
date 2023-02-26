@@ -22,3 +22,8 @@
 99776
 
 """
+
+num, m = map(int, input().split())
+
+stack = []
+num = list(map(int, str(num)))

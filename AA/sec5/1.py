@@ -26,16 +26,20 @@
 num, m = map(int, input().split())
 
 stack = []
-num = list(map(int, str(num)))
+num = list(map(int, str(num)))      # list , string 화 시킴
 
 for x in num:
+    # 비어 있거나, m개 모두 제거 했거나, 마지막 수가 x 보다 작을 때
+    # 값을 꺼냄
     while stack and m>0 and stack[-1] < x:
         stack.pop()
         m -= 1
     stack.append(x)
 
-if m > 0:
+# m개를 다 지우지 못했을 경우
+if m != 0:
     stack = stack[:-m]
 
-stack = ''.join(map(str, stack))
-print(stack)
+res = ''.join(map(str, stack))
+
+print(res)

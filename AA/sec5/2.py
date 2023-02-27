@@ -37,4 +37,15 @@ n = input()
 stack = []
 ans = 0
 
-
+for c in n:
+    if c in "(":
+        stack.append(c)
+    elif len(stack) == 0:
+        continue
+    elif c == ')' and stack[-1] == '(':
+        ans += 1
+        stack.pop(-1)
+    else:
+        stack = []
+        continue
+print(ans)

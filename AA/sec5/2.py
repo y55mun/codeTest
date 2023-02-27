@@ -38,12 +38,16 @@ stack = []
 ans = 0
 
 for i in range(len(n)):
+    # 열린 괄호의 경우 스택에 다 넣어줌
     if n[i] == '(':
         stack.append(n[i])
+
+    # 닫힌 괄호 ( 의 경우, ( 이 나올 경우와 ) 이 나올 경우 두 가지로 나눠서 생각
     else:
         stack.pop()
-        if n[i-1] == '(':
-            ans += len(stack)
-        else:
-            ans += 1
+
+        if n[i-1] == '(':   # ( 이 나오고 이전 문자가 ) 였으면 -> 해당 파트는 레이저.
+            ans += len(stack)   # 현재 스택에 쌓인 ( 개수(=쇠막대기 개수) 만큼 개수를 더해줌
+        else:   # ( 이 나오고 이전 문자도 ( 였으면 쇠막대기 끄트머리
+            ans += 1    # 하나가 나올때마다 하나씩만 추가
 print(ans)

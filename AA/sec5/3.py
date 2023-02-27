@@ -50,7 +50,7 @@ for x in a:
             stack.append(x)
 
         elif x == '+' or x == '-':
-            while stack and stack[-1] == '(':
+            while stack and stack[-1] != '(':
                 ans += stack.pop()
             stack.append(x)
 

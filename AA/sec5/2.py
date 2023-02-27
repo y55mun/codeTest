@@ -33,18 +33,17 @@
 
 """
 
-n = list(input())
+n = input()
 stack = []
 ans = 0
 
-for c in n:
-    if c == '(':
-        stack.append(c)
-    elif c == ')':
+for i in range(len(n)):
+    if n[i] == '(':
+        stack.append(n[i])
+    else:
         stack.pop()
-        if c == '(':
+        if n[i] == '(':
             ans += len(stack)
         else:
             ans += 1
 print(ans)
-

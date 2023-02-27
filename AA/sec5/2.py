@@ -23,7 +23,7 @@
 ()(((()())(())()))()()
 
 ▣ 출력예제 1
-17
+15
 
 ▣ 입력예제 2
 (((()(()()))(())()))(()())
@@ -42,7 +42,7 @@ for i in range(len(n)):
         stack.append(n[i])
     else:
         stack.pop()
-        if n[i] == '(':
+        if n[i-1] == '(':
             ans += len(stack)
         else:
             ans += 1

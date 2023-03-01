@@ -32,28 +32,30 @@ stack = []
 ans = ''
 
 for x in a:
-    if x.isdecimal():
-        ans += x
+    if x.isdecimal():   # 10진수 인지 확인 후
+        ans += x    # 저장
 
+    # 연산자 일 경우 +-*/()
     else:
         if x == '(':
             stack.append(x)
 
         elif x == ')':
-            while stack and stack[-1] != '(':
+            while stack and stack[-1] != '(':   # (를 만날 때까지 연산
                 ans += stack.pop()
-            stack.pop()
+            stack.pop()     # 스택에 쌓여있는 ( 없애기
 
         elif x == '*' or x == '/':
-            while stack and (stack[-1] == '*' or stack[-1] == '/'):
-                ans += stack.pop()
+            while stack and (stack[-1] == '*' or stack[-1] == '/'):     # 스택이 비어있지 않고 스택의 마지막이 * 나 / 일 때
+                ans += stack.pop()  # 끄집어내서 누적
             stack.append(x)
 
-        elif x == '+' or x == '-':
+        elif x == '+' or x == '-':  # + 나 - 는 후순위
             while stack and stack[-1] != '(':
-                ans += stack.pop()
+                ans += stack.pop()  # (를 만날 때까지 연산
             stack.append(x)
 
+# 스택에 남아있는 것들 연산
 while stack:
     ans += stack.pop()
 

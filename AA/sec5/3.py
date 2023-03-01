@@ -26,35 +26,3 @@
 ▣ 출력예제 2
 352+*9-
 """
-
-a = input()
-stack = []
-ans = ''
-
-for x in a:
-    if x.isdecimal():
-        ans += x
-
-    else:
-        if x == '(':
-            stack.append(x)
-
-        elif x == ')':
-            while stack and stack[-1] != '(':
-                ans += stack.pop()
-            stack.pop()
-
-        elif x == '*' or x == '/':
-            while stack and (stack[-1] == '*' or stack[-1] == '/'):
-                ans += stack.pop()
-            stack.append(x)
-
-        elif x == '+' or x == '-':
-            while stack and stack[-1] != '(':
-                ans += stack.pop()
-            stack.append(x)
-
-while stack:
-    ans += stack.pop()
-
-print(ans)

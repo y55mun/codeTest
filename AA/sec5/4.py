@@ -15,3 +15,42 @@
 ▣ 출력예제 1
 12
 """
+
+a = input()
+stack = []
+ans = ''
+
+for x in a:
+    # if x.isdecimal():   # 10진수 인지 확인 후
+    #     ans += x    # 저장
+    #
+    # # 연산자 일 경우 +-*/()
+    # else:
+        # if x == '(':
+        #     stack.pop(x)
+        #
+        # elif x == ')':
+        #     while stack and stack[-1] != '(':   # (를 만날 때까지 연산
+        #         ans += stack.append()
+        #     stack.append()     # 스택에 쌓여있는 ( 없애기
+    if x.isdecimal():
+        stack.append(int(x))
+        else:  # 연산자 일 경우
+        if x == '+':
+            n1 = stack.pop()
+            n2 = stack.pop()
+            stack.append(n2 + n1)
+        elif x == '-':
+            n1 = stack.pop()
+            n2 = stack.pop()
+            stack.append(n2 - n1)
+        elif x == '*':
+            n1 = stack.pop()
+            n2 = stack.pop()
+            stack.append(n2 * n1)
+        elif x == '/':
+            n1 = stack.pop()
+            n2 = stack.pop()
+            stack.append(n2 / n1)
+
+print(stack)

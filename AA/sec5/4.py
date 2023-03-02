@@ -35,7 +35,7 @@ for x in a:
         #     stack.append()     # 스택에 쌓여있는 ( 없애기
     if x.isdecimal():
         stack.append(int(x))
-        else:  # 연산자 일 경우
+    else:  # 연산자 일 경우
         if x == '+':
             n1 = stack.pop()
             n2 = stack.pop()
@@ -53,4 +53,4 @@ for x in a:
             n2 = stack.pop()
             stack.append(n2 / n1)
 
-print(stack)
+print(stack.pop())

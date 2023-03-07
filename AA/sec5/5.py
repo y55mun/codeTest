@@ -31,8 +31,5 @@ prince = list(range(1, n+1))
 prince = deque(prince)
 
 while(prince):
-    for _ in range(k-1):
-        prince.append(prince.popleft())
-    prince.popleft()
-    if len(prince) == 1:
-        print(prince[0])
+    for _ in range(k-1):    # K번째 전 까지는 남아있어야 함
+        prince.append(prince.popleft()) # 왼쪽의 원소를 빼서 오른쪽에 이어 붙임

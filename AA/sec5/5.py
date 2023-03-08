@@ -30,3 +30,10 @@ n, k = map(int, input().split())
 prince = list(range(1, n+1))
 prince = deque(prince)
 
+while(prince):
+    for _ in range(k-1):    # K번째 전 까지는 남아있어야 함
+        prince.append(prince.popleft()) # 왼쪽의 원소를 빼서 오른쪽에 이어 붙임
+    prince.popleft()    # k번째 수는 문제에서 설명했던 대로 빼줌
+
+    if len(prince) == 1:    # 길이가 1이 될 때 종료료
+       print(prince[0])

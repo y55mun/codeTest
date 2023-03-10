@@ -35,5 +35,8 @@ M번째 환자의 몇 번째로 진료받는지 출력하세요.
 
 
 """
+from collections import deque
 
 n, m = map(int, input())
+patList = list(map(int, input().split()))
+patList = deque(patList)

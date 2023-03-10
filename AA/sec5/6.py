@@ -40,3 +40,8 @@ from collections import deque
 n, m = map(int, input())
 patList = list(map(int, input().split()))
 patList = deque(patList)
+
+
+while(patList):
+    for _ in range(n):
+        patList.popleft()

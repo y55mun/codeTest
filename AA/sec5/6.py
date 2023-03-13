@@ -38,16 +38,20 @@ M번째 환자의 몇 번째로 진료받는지 출력하세요.
 from collections import deque
 
 n, m = map(int, input().split())
+
+# 위험도가 같은 것이 있고, queue 에서 계속 위치가 바뀐다면 그게 처음 m 번째 였다는걸 알기 위해 -> index 사용!
+# index를 위험도와 같이 묶어서 저장!
 patList = [(pos, val) for pos, val in enumerate(list(map(int, input().split())))]
 patList = deque(patList)
 cnt = 0
 
 while True:
+    # 자신의 뒤에 자신보다 위험도가 큰게 있는지 검사
     cur = patList.popleft()
     if any(cur[1] < x[1] for x in patList):
-        patList.append(cur)
+        patList.append(cur) # 뒤로 이동
     else:
-        cnt += 1
-        if cur[0] == m:
-            print(cnt)
+        cnt += 1    # 진료 받음
+        if cur[0] == m:     # 진료받는 환자가 m번째 환자라면
+            print(cnt)  # 출력
             break

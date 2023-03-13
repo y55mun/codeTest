@@ -38,10 +38,16 @@ M번째 환자의 몇 번째로 진료받는지 출력하세요.
 from collections import deque
 
 n, m = map(int, input())
-patList = list(map(int, input().split()))
+patList = [(pos, val) for pos, val in enumerate(list(map(int, input().split())))]
 patList = deque(patList)
+cnt = 0
 
-
-while(patList):
-    for _ in range(n):
-        patList.popleft()
+while True:
+    cur = patList.popleft()
+    if any(cur[1] < x[1] for x in patList):
+        patList.append(cur)
+    else:
+        cnt += 1
+        if cur[0] == m:
+            print(cnt)
+            break

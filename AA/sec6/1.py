@@ -17,10 +17,8 @@
 
 """
 res = []
-ans = ''
 
 def toBinary(n):
-    global ans
 
     if n // 2 == 1:     # 몫이 1이면
         res.append(n%2)     # 2로 나눴을 때의 나머지를 저장

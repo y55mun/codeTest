@@ -16,24 +16,14 @@
 1011
 
 """
-res = []
+import sys
+sys.stdin=open("input.txt", "r")
+def DFS(x):
+    if x==0:
+        return
+    else:
+        DFS(x//2)
+        print(x%2, end='')
 
-def toBinary(n):
-
-    if n // 2 == 1:     # 몫이 1이면
-        res.append(n%2)     # 2로 나눴을 때의 나머지를 저장
-        res.append(n // 2)
-        while res:
-            print(res.pop(), end='')    # 옆으로 펼쳐놓기 위해 사용
-
-    else:   # 몫이 1이 아니면
-        # 그 나머지 저장
-        res.append(n%2)
-
-        # 2로 나누고
-        n = n // 2
-
-        toBinary(n)     # 다시
-
-n = int(input())
-toBinary(n)
+n=int(input())
+DFS(n)

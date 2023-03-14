@@ -35,7 +35,7 @@ def toBinary(n):
         # 2로 나누고
         n = n // 2
 
-        toBinary(n)     #다시
+        toBinary(n)     # 다시
 
 n = int(input())
 toBinary(n)

@@ -23,20 +23,14 @@ def toBinary(n):
     global ans
 
     if n // 2 == 1:     # 몫이 1이면
-        # res.append(n // 2)
         res.append(n%2)     # 2로 나눴을 때의 나머지를 저장
-        # print(res.pop())    # 무조건 0
         res.append(n // 2)
         while res:
-            # ans = ''.join(map(str, res.pop()))
-            # print(ans)
             print(res.pop(), end='')
 
     else:   # 몫이 1이 아니면
         # 그 나머지 저장
         res.append(n%2)
-        # print("111::", res.pop())
-        # print(res.pop())
 
         # 2로 나누고
         n = n // 2

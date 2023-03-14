@@ -26,7 +26,7 @@ def toBinary(n):
         res.append(n%2)     # 2로 나눴을 때의 나머지를 저장
         res.append(n // 2)
         while res:
-            print(res.pop(), end='')
+            print(res.pop(), end='')    # 옆으로 펼쳐놓기 위해 사용
 
     else:   # 몫이 1이 아니면
         # 그 나머지 저장
@@ -35,7 +35,7 @@ def toBinary(n):
         # 2로 나누고
         n = n // 2
 
-        toBinary(n)
+        toBinary(n)     #다시
 
 n = int(input())
 toBinary(n)

@@ -20,7 +20,11 @@
 2
 3
 """
+def dfs(v):
+    if v == n+1:
+
 
 n = int(input())
-
 ch = [0] * (n+1)
+
+dfs(1)

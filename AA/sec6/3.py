@@ -30,16 +30,16 @@ def dfs(v):
     if v == n+1:
         for i in range(1, n+1):
             if ch[i] == 1:
-                print(i, end=' ')
+                print(i, end=' ')   # 해당 집합의 모든 부분 집합
         print()
     else:
-        ch[v] = 1
+        ch[v] = 1   # 체크하면 부분집합의 원소를 사용
         dfs(v+1)
-        ch[v] = 0
+        ch[v] = 0   # 체크하지 않으면 부분집합의 원소를 사용하지 않음
         dfs(v+1)
 
 
 n = int(input())
-ch = [0] * (n+1)
+ch = [0] * (n+1)    # 집합의 사용 여부를 체크하기 위한 체크 변수
 
 dfs(1)

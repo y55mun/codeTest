@@ -27,12 +27,12 @@ YES
 
 import sys
 def dfs(l, sum):
-    if sum > total//2:
+    if sum > total//2:  # 부분집합의 합이 나머지 총합보다 커질 경우 볼 필요 없음
         return
-    if l ==n:
-        if sum == (total-sum):
+    if l ==n:   # 종료 지점
+        if sum == (total-sum):  # 부분집합의 총합이 나머지와 같다면
             print("YES")
-            sys.exit(0)
+            sys.exit(0) # 프로그램 종료
     else:
         dfs(l+1, sum+m[l])
         dfs(l+1, sum)
@@ -45,4 +45,4 @@ m = list(map(int, input().split()))
 
 total = sum(m)
 dfs(0, 0)
-print("NO")
+print("NO") # 재귀가 다 돌고 끝나면 같은게 없으므로 NO 출력

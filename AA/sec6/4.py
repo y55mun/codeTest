@@ -27,12 +27,15 @@ YES
 
 import sys
 def dfs(l, sum):    # l: 인덱스 번호, sum: 부분집합 원소의 총 합
-    if sum > total//2:  # 부분집합의 합이 나머지 총합보다 커질 경우 볼 필요 없음
+    global flag
+    if flag:
+        return
+    if sum > total // 2:  # 부분집합의 합이 나머지 총합보다 커질 경우 볼 필요 없음
         return
     if l ==n:   # 종료 지점
         if sum == (total-sum):  # 부분집합의 총합이 나머지와 같다면
             print("YES")
-            sys.exit(0) # 프로그램 종료
+            flag =  True
     else:
         dfs(l+1, sum+m[l])  # list m의 인덱스 번호가 l인 벨류 값을 부분집합의 원소로 사용
         dfs(l+1, sum)   #  list m의 인덱스 번호가 l인 벨류 값을 부분집합으로 사용하지 않겠다는 의미
@@ -41,5 +44,8 @@ n = int(input())
 m = list(map(int, input().split()))
 
 total = sum(m)
+flag = False
 dfs(0, 0)
-print("NO") # 재귀가 다 돌고 끝나면 같은게 없으므로 NO 출력
+
+if not flag:
+    print("NO") # 재귀가 다 돌고 끝나면 같은게 없으므로 NO 출력

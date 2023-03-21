@@ -25,23 +25,24 @@ YES
 # 1. 부분 집합 만들기
 # 2. 그 부분집합의 합과 나머지들의 합 비교
 
+import sys
 def dfs(l, sum):
-
-    if v == n+1:
-        for i in range(1, n+1):
-            if ch[i] == 1:
-                print(i, end=' ')   # 해당 집합의 모든 부분 집합
-        print()
+    if sum > total//2:
+        return
+    if l ==n:
+        if sum == (total-sum):
+            print("YES")
+            sys.exit(0)
     else:
-        ch[v] = 1   # 체크하면 부분집합의 원소를 사용
-        dfs(v+1)
-        ch[v] = 0   # 체크하지 않으면 부분집합의 원소를 사용하지 않음
-        dfs(v+1)
+        dfs(l+1, sum+m[l])
+        dfs(l+1, sum)
+
+
 
 
 n = int(input())
 m = list(map(int, input().split()))
 
 total = sum(m)
-dfs(0,0)
+dfs(0, 0)
 print("NO")

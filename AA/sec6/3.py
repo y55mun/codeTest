@@ -27,6 +27,7 @@
 # 2) bfs: 최단 거리 구할 경우
 
 def dfs(v):
+
     if v == n+1:
         for i in range(1, n+1):
             if ch[i] == 1:

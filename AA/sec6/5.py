@@ -22,59 +22,26 @@ N마리의 바둑이와 각 바둑이의 무게 W가 주어지면, 철수가 트
 242
 
 """
-import sys
 
-def dfs(w, e):
-    # for _ in range(n):
-    total = sum(w[:e+1])
-# print(w[0])
-# print(w[:e+1])
-#     print(total)
-    # return
-    # if total == c:
-    #     print('완성!!::', total)
-    #     return
-    # elif total < c:
-    #     beforeTotal = total
-    #     afterTotal = dfs(w, e+1)
-    #     if afterTotal > c:
-    #         print('완성222', beforeTotal)
-
-    # elif total > c:
-    #     e -= 1
-    #     dfs(w,e)
-    if total < c:
-
-        print(total)
-        ans.append(total)
-        dfs(w, e + 1)
-    elif total > c:
-        # dfs(w, e-1)
-        print(ans.pop())
-        sys.exit(0)
-
+def dfs(l, sum, tsum):
+    global ans
+    if sum + (total - tsum) < ans:
+        return
+    if sum > c:
+        return
+    if l == n:
+        if sum > ans:
+            ans = sum
+    else:
+        dfs(l+1, sum+w[l], tsum+w[l])
+        dfs(l+1, sum, tsum+w[l])
 
 
 
 c, n = list(map(int, input().split()))
 w = [int(input()) for _ in range(n)]
-ans = []
+total = sum(w)
+ans = -214700000
 
-# 아래의 for 문 대신 위에 코딩으로 바꿨음
-# for _ in range(n):
-#     w.append(input())
-w.sort(reverse=True)
-
-dfs(w, 0)
-
-
-"""
-1. 입력 받은 값들을 내림차순 sort =>
-2. 아래 처럼 더한 값들과 c를 비교.  
-    1+2
-    1+2+3
-    1+2+3+4
-3. 더한 값 < c => 그 다음 값을 더해봄
-4. 더한 값 == c => 이 값 출력
-5. 더한 값 > c -> 이 전 값 까지만 더하고 출력 
-"""
+dfs(0, 0, 0)
+print(ans)

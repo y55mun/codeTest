@@ -25,6 +25,8 @@ N마리의 바둑이와 각 바둑이의 무게 W가 주어지면, 철수가 트
 
 def dfs(l, sum):  # l: 인덱스, sum: 부분집합의 합
     global result
+    if sum > c:
+        return
     if l == n:  # 종착점. 부분집합 1개 완성
         if sum > result:
             result = sum

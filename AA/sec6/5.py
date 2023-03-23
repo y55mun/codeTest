@@ -23,14 +23,14 @@ N마리의 바둑이와 각 바둑이의 무게 W가 주어지면, 철수가 트
 
 """
 
-def dfs(l, sum, tsum):  # l: 인덱스, sum: 부분집합의 합
-
+def dfs(l, sum):  # l: 인덱스, sum: 부분집합의 합
+    global result
     if l == n:  # 종착점. 부분집합 1개 완성
         if sum > result:
             result = sum
     else:
-        dfs(l+1, sum+a[l], tsum+w[l])
-        dfs(l+1, sum, tsum+w[l])
+        dfs(l+1, sum+a[l])
+        dfs(l+1, sum)
 
 
 
@@ -40,5 +40,5 @@ result = -2147000000        # 가장 큰 값을 구해야 하니, 아주 작은 
 for i in range(n):
     a[i] = int(input())
 
-dfs(0, 0, 0)
-print(ans)
+dfs(0, 0)
+print(result)

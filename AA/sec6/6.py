@@ -26,4 +26,10 @@
 
 """
 
-n, m = input().split()
+
+
+n, m = map(int, input().split())
+res = [0] * m
+cnt = 0
+dfs(0)
+print(cnt)

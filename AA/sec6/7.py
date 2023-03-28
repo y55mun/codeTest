@@ -20,3 +20,8 @@
 
 설명 : 5 5 5 동전 3개로 거슬러 줄 수 있다
 """
+
+n = int(input())
+nList = list(map(int, input().split()))
+m = int(input())
+

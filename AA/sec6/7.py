@@ -10,6 +10,7 @@
 ▣ 출력설명
 첫 번째 줄에 거슬러 줄 동전의 최소개수를 출력한다.
 
+
 ▣ 입력예제 1
 3
 1 2 5
@@ -21,7 +22,7 @@
 설명 : 5 5 5 동전 3개로 거슬러 줄 수 있다
 """
 
-n = int(input())
-nList = list(map(int, input().split()))
-m = int(input())
+n = int(input())    # 동전의 종류 개수
+nList = list(map(int, input().split()))     # N개의 동전의 종류
+m = int(input())    # 거슬러 줄 금액
 

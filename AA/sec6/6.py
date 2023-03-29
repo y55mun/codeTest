@@ -28,7 +28,7 @@
 
 
 def dfs(l):     # l: 리스트의 인덱스 번호-> 중복수열의 자리수
-    global cnt
+    global cnt      # dfs 함수 내에서 변수 cnt를 정의한 식이 존재 하기 때문에 global 로 선언해야함
     if l == m:  # 중복 순열 완성 됐을 경우
         for j in range(m):
             print(res[j], end=' ')

@@ -27,7 +27,7 @@
 """
 
 
-def dfs(l):
+def dfs(l):     # l: 리스트의 인덱스 번호-> 중복수열의 자리수
     global cnt
     if l == m:  # 중복 순열 완성 됐을 경우
         for j in range(m):

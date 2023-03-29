@@ -29,7 +29,7 @@
 
 def dfs(l):
     global cnt
-    if l == m:
+    if l == m:  # 중복 순열 완성 됐을 경우
         for j in range(m):
             print(res[j], end=' ')
         print()

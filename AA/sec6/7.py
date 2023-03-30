@@ -21,8 +21,25 @@
 
 설명 : 5 5 5 동전 3개로 거슬러 줄 수 있다
 """
+def dfs(l):
+    global min
+
+    if l == m:
+        if sum(res) == m:
+            if min > l:
+                min = l
+        return
+    else:
+        for i in range(1, n+1):
+            dfs(l+1)
+            res[l] = k[i]
+
 
 n = int(input())    # 동전의 종류 개수
 nList = list(map(int, input().split()))     # N개의 동전의 종류
 m = int(input())    # 거슬러 줄 금액
 
+min = 900
+res = [0] * m
+dfs(0)
+print(min)

@@ -29,15 +29,14 @@ def dfs(x, s):
     if s > m:
         return
 
-
+    if x > res:
+        return
 
     if s == m:
-        print(x)
-        sys.exit(0)
-
-
+        if x < res:
+            res = x
     else:
-        for i in range(1, n+1):
+        for i in range(n):
             dfs(x+1, s+nList[i])
 
 

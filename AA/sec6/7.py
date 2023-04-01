@@ -45,6 +45,6 @@ nList = list(map(int, input().split()))     # N개의 동전의 종류
 m = int(input())    # 거슬러 줄 금액
 
 res = 2147000000    # 최소가 되면 바꿔야 하니까 큰 값으로 적용
-nList.sort(reverse=True)
+nList.sort(reverse=True)    # 가장 큰 동전인 5원짜리부터 하니까 복잡도를 좀 줄여줌
 dfs(0,0)
 print(res)

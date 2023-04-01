@@ -23,7 +23,7 @@
 """
 import sys
 
-def dfs(x, s):
+def dfs(x, s):      # x: 사용한 동전 갯수
     global res
 
     if s > m:

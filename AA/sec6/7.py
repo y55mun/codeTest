@@ -26,10 +26,10 @@ import sys
 def dfs(x, s):      # x: 사용한 동전 갯수
     global res
 
-    if s > m:
+    if x > res:   # 레벨이 우리가 갖고 있는 답 보다 높으면 더이상 할 필요 없음
         return
 
-    if x > res:
+    if s > m:
         return
 
     if s == m:

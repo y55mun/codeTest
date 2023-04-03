@@ -20,3 +20,5 @@
 3 2
 6
 """
+
+n, m = list(map(int, input().split()))

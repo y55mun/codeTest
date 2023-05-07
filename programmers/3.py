@@ -2,10 +2,6 @@
 공원 산책
 '''
 
-import sys
-from collections import deque
-
-
 def solution(park, routes):
     # 시작 위치 찾기
     for j in range(len(park)):

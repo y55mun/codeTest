@@ -18,6 +18,6 @@ for _ in range(5):
         etime -= 1
         emin += 60
 
-    result += (etime - stime) + (emin - smin) * 60
+    result += (etime - stime) * 60 + (emin - smin)
 
 print(result)

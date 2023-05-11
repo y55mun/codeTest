@@ -34,10 +34,17 @@ maxP = max(mpDic.values())  # 가장 비싼 금속의 가격
 maxP_of_M = 0   # 가장 비싼 금속의 무게
 # 가장 비싼 금속의 무게 찾기
 for m, p in mpDic.items():
-    if p == maxP:
+    if p == max(mpDic.values()):
         maxP_of_M = m
 
-        if maxP_of_M < w:
-            result = (maxP_of_M * maxP) + (w -  maxP_of_M)
+    if maxP_of_M < w:
+        result = (maxP_of_M * maxP) + (w -  maxP_of_M)
+    elif maxP_of_M == w:
+        result = maxP_of_M * maxP
+    else:
+        del mpDic[maxP_of_M]
+        maxP_of_M = max(mpDic.values())
+        result = (maxP_of_M * maxP) + (w -  maxP_of_M)
 
 print(result)
+

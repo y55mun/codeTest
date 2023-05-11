@@ -16,3 +16,28 @@ softeer - 금고털이
 170
 
 '''
+
+import sys
+input = sys.stdin.readline
+
+w, n = map(int, input().split())
+
+result = 0
+
+mpDic = {}
+for i in range(n):
+    m, p = map(int, input().split())
+    mpDic[m] = p
+
+maxP = max(mpDic.values())  # 가장 비싼 금속의 가격
+
+maxP_of_M = 0   # 가장 비싼 금속의 무게
+# 가장 비싼 금속의 무게 찾기
+for m, p in mpDic.items():
+    if p == maxP:
+        maxP_of_M = m
+
+        if maxP_of_M < w:
+            result = (maxP_of_M * maxP) + (w -  maxP_of_M)
+
+print(result)

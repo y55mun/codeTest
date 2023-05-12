@@ -19,3 +19,10 @@ softeer - 지도 자동 구축
 
 '''
 
+import sys
+input = sys.stdin.readline
+
+n = int(input())
+result = (n+2)*(n+2)
+
+print(result)

@@ -19,6 +19,19 @@ import sys
 input = sys.stdin.readline
 
 n, m = map(int, input().split())
+
+"""
+<input>
+101111
+101010
+101011
+111011
+
+<output>
+[[1, 0, 1, 1, 1, 1], [1, 0, 1, 0, 1, 0], [1, 0, 1, 0, 1, 1], [1, 1, 1, 0, 1, 1]]
+
+
+"""
 map = [list(map(int, input().strip())) for _ in range(n)]
 
 # 방문 했는지 확인

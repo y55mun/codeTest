@@ -23,6 +23,12 @@ import sys
 input = sys.stdin.readline
 
 n = int(input())
-result = (n+2)*(n+2)
 
-print(result)
+dp = [0] * 16
+dp[0] = 2
+
+for i in range(1, n+1):
+    dp[i] = dp[i-1] + (dp[i-1]-1)
+
+print(dp[n] ** 2)
+

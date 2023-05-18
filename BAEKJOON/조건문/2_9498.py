@@ -11,7 +11,7 @@
 예제 출력
 A
 '''
-n = int(input)
+n = int(input())
 
 if 90 <= n <= 100:
     print('A')

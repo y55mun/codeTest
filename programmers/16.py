@@ -1,10 +1,7 @@
-import sys
-input = sys.stdin.readline
+num1 = int(input())
+num2 = input()
 
-n1 = int(input())
-n2 = input()
+for i in range(len(num2), 0, -1):
+    print(num1 * int(num2[i-1]))
 
-for i in range(len(n2), 0, -1):
-    print(n1 * int(n2[i-1]))
-
-print(n1 * int(n2))
+print(num1 * int(num2))

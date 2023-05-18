@@ -27,11 +27,10 @@
 
 h, m = map(int, input().split())
 
-h = h - 1
-if h < 0:
-    h = 23
-
 if m < 45: # 45분 보다 작다면
+    h = h - 1
+    if h < 0:
+        h=23
     m = (60 + m) - 45
     print(h, m)
 else:

@@ -19,7 +19,7 @@ from collections import Counter
 scores = list(map(int, input().split()))
 
 c = Counter(scores)
-# print(c)
+
 mode = c.most_common(1)     # 가장 빈도수가 높은 값 찾기
 # print(mode) # 최빈도 셋트- [(3, 3)]
 # print(mode[0][0])   # 같은 눈
@@ -27,7 +27,7 @@ mode = c.most_common(1)     # 가장 빈도수가 높은 값 찾기
 
 same_mode = mode[0][0]      # 같은 눈
 same_mode_cnt = mode[0][1]      # 같은 눈의 갯수
-
+print(same_mode_cnt)
 if same_mode_cnt == 3:
     print(10000+same_mode*1000)
 elif same_mode_cnt == 2:

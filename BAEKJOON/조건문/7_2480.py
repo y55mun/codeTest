@@ -14,24 +14,14 @@
 1300
 '''
 
-from collections import Counter
 
-scores = list(map(int, input().split()))
+a,b,c = map(int, input().split())
 
-c = Counter(scores)
-
-mode = c.most_common(1)     # 가장 빈도수가 높은 값 찾기
-# print(mode) # 최빈도 셋트- [(3, 3)]
-# print(mode[0][0])   # 같은 눈
-# print(mode[0][1])   # 같은 눈의 갯수
-
-same_mode = mode[0][0]      # 같은 눈
-same_mode_cnt = mode[0][1]      # 같은 눈의 갯수
-print(same_mode_cnt)
-if same_mode_cnt == 3:
-    print(10000+same_mode*1000)
-elif same_mode_cnt == 2:
-    print(1000+same_mode*100)
+if a==b==c:
+    print(10000+a*1000)
+elif a==b or b==c:
+    print(1000+b*100)
+elif a==c:
+    print(1000+a*100)
 else:
-    print(same_mode*100)
-
+    print(max(a,b,c)*100)

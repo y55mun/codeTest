@@ -39,7 +39,7 @@ while True:
     result += (n-target)
     n = target
 
-    # n이 k보다 작을 때 (더 이상 나눌 수 없을 때) 반복문 탈출
+    # n이 k보다 작을 때 (더 이상 나눌 수 없을 때) 2_반복문 탈출
     if n < k:
         break
 

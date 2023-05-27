@@ -10,7 +10,6 @@
 출력
 각 테스트 케이스마다 A+B를 출력한다.
 '''
-
 t = int(input())
 for _ in range(t):
     a,b = list(map(int, input().split()))

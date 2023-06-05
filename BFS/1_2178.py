@@ -30,7 +30,6 @@ n, m = map(int, input().split())
 <output>
 [[1, 0, 1, 1, 1, 1], [1, 0, 1, 0, 1, 0], [1, 0, 1, 0, 1, 1], [1, 1, 1, 0, 1, 1]]
 
-
 """
 map = [list(map(int, input().strip())) for _ in range(n)]
 

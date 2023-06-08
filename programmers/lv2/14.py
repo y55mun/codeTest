@@ -27,7 +27,6 @@ n	result
 총 3가지 방법으로 멀리 뛸 수 있습니다.
 '''
 
-
 def solution(n):
     answer = [1, 1]
 

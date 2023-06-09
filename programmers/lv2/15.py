@@ -21,16 +21,19 @@ skill	skill_trees	                        return
 "CBD"	["BACDE", "CBADF", "AECB", "BDA"]	2
 
 '''
+
+
 def solution(skill, skill_trees):
     answer = 0
 
-    for i in range(0,len(skill_trees),1):
-        skill_trees[i] = ''.join(c for c in skill_trees[i] if c in skill)
+    # 1. skill_trees 원소들을 한 글자씩 빼야함.
+    # 2. 1에서 skill에 포함된 문자열만 빼기
+    for i in range(0, len(skill_trees)):
+        skill_trees[i] = ''.join([s for s in skill_trees[i] if s in skill])
 
-
-    for k in skill_trees:
-        if k == skill[0:len(k)] :
-            answer +=1
-
+    # 3. 2의 문자와 skill 값을 비교
+    for j in skill_trees:
+        if j == skill[0:len(j)]:
+            answer += 1
 
     return answer

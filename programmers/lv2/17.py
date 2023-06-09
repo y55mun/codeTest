@@ -19,9 +19,7 @@ k	tangerine	                result
 4	[1, 3, 2, 5, 4, 5, 2, 3]	2
 2	[1, 1, 1, 1, 2, 2, 2, 3]	1
 '''
-
 from collections import Counter
-
 
 def solution(k, tangerine):
     answer = 0
@@ -29,10 +27,11 @@ def solution(k, tangerine):
     # 각 원소의 갯수 count
     dic = dict(Counter(tangerine))
 
-    # key 를 기준으로 오름차순 정렬
+    # value 를 기준으로 내림차순 정렬
     sort_ = sorted(dic.items(), key=lambda x: x[1], reverse=True)
 
     for i in sort_:
+        # 수량이 많은 귤부터 담기
         k -= i[1]
         answer += 1
 

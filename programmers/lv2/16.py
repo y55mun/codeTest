@@ -23,4 +23,4 @@ def solution(dirs):
 
             y, x = ny, nx  # 이동 위치로 현재 위치 변경
 
-    return len(sets) // 2
+    return len(sets) // 2   # 중복 제거

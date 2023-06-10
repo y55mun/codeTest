@@ -29,7 +29,7 @@ def solution(skill, skill_trees):
     # 1. skill_trees 원소들을 한 글자씩 빼야함.
     # 2. 1에서 skill에 포함된 문자열만 빼기
     for i in range(0, len(skill_trees)):
-        skill_trees[i] = ''.join([s for s in skill_trees[i] if s in skill])
+        skill_trees[i] = ''.join(s for s in skill_trees[i] if s in skill)
 
     # 3. 2의 문자와 skill 값을 비교
     for j in skill_trees:

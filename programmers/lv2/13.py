@@ -9,9 +9,9 @@ arr은 길이 1이상, 15이하인 배열입니다.
 arr의 원소는 100 이하인 자연수입니다.
 
 입출력 예
-arr	result
+arr	        result
 [2,6,8,14]	168
-[1,2,3]	6
+[1,2,3]	    6
 '''
 
 from math import gcd

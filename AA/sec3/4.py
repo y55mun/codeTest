@@ -28,4 +28,7 @@ m_list = list(map(int, input().split()))
 
 
 ans = list(n_list + m_list)
-print(sorted(ans))
+ans = sorted(ans)
+
+for x in ans:
+    print(x, end= ' ')

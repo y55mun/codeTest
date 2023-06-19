@@ -19,31 +19,13 @@
 
 ▣ 출력예제 1
 1 2 3 3 5 6 7 9
-
 """
-import sys
 
 n = int(input())
-a = list(map(int, input().split()))
+n_list = list(map(int, input().split()))
 m = int(input())
-b = list(map(int, input().split()))
-p1 = p2 = 0
-c = []
-
-while p1<n and p2<m:    # 두 개의 리스트 중 하나라도 끝까지 같다면 이 while 문은 끝
-    if a[p1] <= b[p2]:
-        c.append(a[p1])
-        p1 += 1
-    else:
-        c.append(b[p2])
-        p2 += 1
+m_list = list(map(int, input().split()))
 
 
-# 남은 자료가 무엇인지 확인
-if p1<n:    # p1이 n까지 가지 못하고 남았을 경우
-    c = c+a[p1:]
-if p2<m:
-    c = c+b[p2:]
-
-for x in c:
-    print(x, end=' ')
+ans = list(n_list + m_list)
+print(sorted(ans))

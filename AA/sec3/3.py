@@ -28,7 +28,7 @@
 """
 
 import sys
-cards = [i for i in range(1, 21)]
+cards = list(range(21))
 
 for _ in range(10):
     s, e = map(int, input().split())

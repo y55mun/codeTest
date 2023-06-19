@@ -34,5 +34,5 @@ for i in range(1, n+1):
         if m[j] != m[-1-j]:
             print('#', i,'NO')
             break
-        else:
-            print('#', i, 'YES')
+    else:
+        print('#', i, 'YES')

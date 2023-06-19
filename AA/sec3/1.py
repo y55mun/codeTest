@@ -28,6 +28,7 @@ n = int(input())
 
 for i in range(1, n+1):
     m = input()
+    m = m.upper()
 
     for j in range(len(m)):
         if m[j] != m[-1-j]:

@@ -17,28 +17,24 @@ g0en2Ts8eSoft
 ▣ 출력예제 1
 28
 6
-
 """
-
 words = input()
-
 words_to_num = []
-for num in words:
-    if num.isdigit():
-        words_to_num.append(num)
+
+for i in words:
+    if i.isdigit():
+        words_to_num.append(i)
 
 words_to_num = ''.join(words_to_num)
 
-if words_to_num[0] == '0':
+if words_to_num[0] == '0':  # 맨 앞이 0 으로 시작하면 0 제거
     words_to_num = words_to_num.lstrip("0")
 
-# 약수의 개수 구하기
+# 약수의 갯수 구하기
 cnt = 0
 tmp = int(words_to_num)
-for x in range(1, tmp+1):
-    if tmp % x == 0:
+for i in range(1, tmp+1):
+    if tmp % i == 0:
         cnt += 1
-
-# 결과창 출력
 print(words_to_num)
 print(cnt)

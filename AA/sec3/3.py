@@ -25,19 +25,17 @@
 
 ▣ 출력예제 1
 1 2 3 4 10 9 8 7 13 12 11 5 6 14 15 16 17 18 19 20
-
 """
+
 import sys
+cards = [i for i in range(1, 21)]
 
-cards = list(range(21))
+for _ in range(10):
+    s, e = map(int, input().split())
 
-for _ in range(10): # 10번 반복
-    a, b = map(int, input().split())
-
-    for j in range((b-a+1)//2):
-        cards[a+j], cards[b-j] = cards[b-j], cards[a+j]     # swap
-
-cards.pop(0)    # 이걸 하지 않으면 0 부터 나오게 되서 제일 앞에 있는 0을 뺌
+    for j in range((e-s+1)//2):
+        cards[s+j], cards[e-j] = cards[e-j], cards[s+j]
+cards.pop(0)
 
 for x in cards:
     print(x, end=' ')

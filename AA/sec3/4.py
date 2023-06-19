@@ -26,9 +26,21 @@ n_list = list(map(int, input().split()))
 m = int(input())
 m_list = list(map(int, input().split()))
 
+p1=p2=0
+c = []
 
-ans = list(n_list + m_list)
-ans = sorted(ans)
+while p1 < n and p2<m:
+    if n_list[p1] <= m_list[p2]:
+        c.append(n_list[p1])
+        p1 += 1
+    else:
+        c.append(m_list[p2])
+        p2 += 1
 
-for x in ans:
+if p1 < n:
+    c = c + n_list[p1:]
+if p2 < m:
+    c = c + m_list[p2:]
+
+for x in c:
     print(x, end= ' ')

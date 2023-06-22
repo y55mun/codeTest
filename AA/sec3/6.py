@@ -21,16 +21,13 @@ N*N의 격자판이 주어지면 각 행의 합, 각 열의 합, 두 대각선�
 
 ▣ 출력예제 1
 155
-
 """
-
-import sys
 
 n = int(input())
 a = [list(map(int, input().split())) for _ in range(n)]
-
-# 가장 작은 값으로 최댓값 할당
 largest = -2147000000
+
+print(a)
 
 for i in range(n):
     sum1 = sum2 = 0
@@ -38,19 +35,8 @@ for i in range(n):
         sum1 += a[i][j] # 행의 합
         sum2 += a[j][i] # 열의 합
 
-    if sum1 > largest:
+    if sum1 > sum2:
         largest = sum1
-    if sum2 > largest:
+    elif sum1 < sum2:
         largest = sum2
 
-sum1 = sum2 = 0
-for i in range(n):
-    sum1 += a[i][i]
-    sum2 += a[i][n-i-1]
-
-    if sum1 > largest:
-        largest = sum1
-    if sum2 > largest:
-        largest = sum2
-
-print(largest)

@@ -35,7 +35,7 @@ for i in range(n):
 
     if sum1 > largest:
         largest = sum1
-    if sum1 < largest:
+    if sum2 > largest:
         largest = sum2
 
 sum1 = sum2 = 0

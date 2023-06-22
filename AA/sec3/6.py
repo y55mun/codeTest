@@ -33,9 +33,9 @@ for i in range(n):
         sum1 += a[i][j] # 행의 합
         sum2 += a[j][i] # 열의 합
 
-    if sum1 > sum2:
+    if sum1 > largest:
         largest = sum1
-    elif sum1 < sum2:
+    if sum1 < largest:
         largest = sum2
 
 sum1 = sum2 = 0

@@ -18,3 +18,20 @@
 3
 
 """
+
+n, m = map(int, input().split())
+a = list(map(int, input().split()))
+s = 0
+e = len(a) - 1
+
+a.sort()
+#print(a)    # [12, 23, 32, 57, 65, 81, 87, 99]
+while s <= e:
+    mid = (s+e)//2
+    if a[mid] == m:
+        print(mid+1)
+        break
+    elif a[mid] > m:
+        e = mid -1
+    else:
+        s = mid + 1

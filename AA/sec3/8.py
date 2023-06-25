@@ -39,6 +39,7 @@ n = int(input())
 a = [list(map(int, input().split())) for _ in range(n)]
 m = int(input())    # 회전 명령 갯수
 
+###회전
 for i in range(m):
     h, t, k = map(int, input().split())
 
@@ -52,6 +53,7 @@ for i in range(m):
         for _ in range(k):
             a[h-1].insert(0, a[h-1].pop())
 
+### 모래시계 모양 합
 s = 0
 e = n
 res=0

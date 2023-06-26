@@ -27,3 +27,22 @@
 ▣ 출력예제 1
 200
 '''
+
+k, n = map(int, input().split())
+line = [int(input()) for _ in range(k)]
+s, e = 1, max(line)
+
+while s <= e:
+    mid = (s+e) // 2
+    cnt = 0
+
+    for i in line:
+        cnt += i // mid
+
+    if cnt >= n:
+        s = mid + 1
+    else:
+        e = mid - 1
+print(e)
+
+

@@ -30,16 +30,16 @@
 
 k, n = map(int, input().split())
 line = [int(input()) for _ in range(k)]
-s, e = 1, max(line)
+s, e = 1, max(line)     # 이분 탐색의 처음과 끝 위치
 
-while s <= e:
+while s <= e:   # 적절한 랜선의 길이를 찾는 알고리즘
     mid = (s+e) // 2
-    cnt = 0
+    cnt = 0     # 랜선 수
 
     for i in line:
-        cnt += i // mid
+        cnt += i // mid     # 분할 된 랜선 수
 
-    if cnt >= n:
+    if cnt >= n:    # 랜선의 개수가 분기점
         s = mid + 1
     else:
         e = mid - 1

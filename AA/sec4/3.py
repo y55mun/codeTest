@@ -25,3 +25,11 @@ DVD를 가급적 줄이려고 한다. 고민 끝에 지니레코드는 M개의 D
 17
 
 """
+n, m = map(int, input().split())
+Music = list(map(int, input().split()))
+
+lt = 1
+rt = sum(Music)
+
+while lt <= rt:
+    mid = (lt+rt) // 2

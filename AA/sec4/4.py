@@ -23,38 +23,3 @@ C마리의 말을 N개의 마구간에 배치했을 때 가장 가까운 두 말
 3
 
 """
-
-def Count(len): # 말이 들어있는 마구간 갯수
-    cnt = 1 # 말 한 마리 배치
-    ep = horses[0]  # 첫번째 마구간에 말 배치
-
-    for i in range(1, n):
-        if horses[i]-ep >= len: # 마지막에 배치한 지점과 현재 배치하려고 하는 지점의 거리 len 보다 크면
-            cnt += 1    # 해당 위치에 말 배치 가능
-            ep = horses[i]  # 마지막 말의 배치 지점을 바꿔줌
-    return cnt  # 배치한 말의 마리 수를 리턴
-
-n, c = map(int, input().split())
-
-horses = []
-res = 0
-largest = 0
-
-for _ in range(n):
-    tmp = int(input())
-    horses.append(tmp)
-
-horses.sort()
-lt = 1  # 두 말 사이의 거리가 가장 가까운 건 1
-rt = horses[n-1]
-
-while lt<=rt:
-    mid = (lt+rt)//2
-
-    if Count(mid) >= c:     # mid: 가장 가까운 말들의 거리
-        res = mid
-        lt = mid + 1    # 가장 인접한 두 마리 말의 최대 거리이므로, 답이라면 그것보다 더 짧은 거리는 당연히 답이 가능하니 더 큰 거리를 찾아줘야함
-    else:   # 답이 되지 않는다면, 가장 인접한 두 마리 말의 거리가 너무 긴 것이므로 원하는 c마리의 말을 배치하지 못함
-        rt = mid - 1    # 거리를 줄여줘야 하므로 더 긴 쪽은 답이 되지 않음
-
-print(res)

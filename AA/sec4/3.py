@@ -42,6 +42,7 @@ def Count(capacity):
 
 n, m = map(int, input().split())
 Music = list(map(int, input().split()))
+maxx = max(Music)
 
 lt = 1
 rt = sum(Music)

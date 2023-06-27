@@ -23,3 +23,29 @@ C마리의 말을 N개의 마구간에 배치했을 때 가장 가까운 두 말
 3
 
 """
+def Count(len):
+    cnt = 1
+    ep = horses[0]
+
+    for i in range(1, n):
+        if horses[i] - ep >= len:
+            cnt += 1
+            ep = horses[i]
+    return cnt
+
+n, c = map(int, input().split())
+horses = [int(input()) for _ in range(n)]
+
+horses.sort()
+lt = 1
+rt = horses[n-1]
+
+while lt <= rt:
+    mid = (lt+rt) // 2
+
+    if Count(mid) >= c:
+        res = mid
+        lt = mid + 1
+    else:
+        rt = mid - 1
+print(res)

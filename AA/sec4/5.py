@@ -24,23 +24,24 @@
 
 cf) 예제설명
 (2, 3) , (3, 5), (5, 7)이 회의실을 이용할 수 있다.
-
-
-
 """
 
-data = input()
+n = int(input())
+cnt = 0
+time = []
 
-# 첫 번째 문자를 숫자로 변경하여 대입
-result = int(data[0])
+for _ in range(n):
+    s, e = map(int, input().split())
+    time.append([s,e])
 
-for i in range(1, len(data)):
+time = sorted(time, key=lambda a: a[0])    # 시작 시간을 기준으로 오름차순
+time = sorted(time, key=lambda a: a[1])    # 끝나는 시간을 기준으로 오름 차순
 
-    # 두 수 중에서 하나라도 0 혹은 1인 경우, 곱하기 보다는 더하기 수행
-    num = int(data[i])
-    if num <= 1 or result <= 1:
-        result += num
-    else:
-        result *= num
+last = 0 # 회의의 마지막 시간을 저장
 
-print(result)
+for i,j in time:
+    if i >= last:
+        cnt += 1
+        last = j
+
+print(cnt)

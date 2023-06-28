@@ -32,16 +32,14 @@ time = []
 
 for _ in range(n):
     s, e = map(int, input().split())
-    time.append([s,e])
-
-time = sorted(time, key=lambda a: a[0])    # 시작 시간을 기준으로 오름차순
-time = sorted(time, key=lambda a: a[1])    # 끝나는 시간을 기준으로 오름 차순
+    time.append((s,e))
+time.sort(key=lambda x:(x[1], x[0]))    # x[1]을 1순위, x[0] 을 2순위로 해서 정렬
 
 last = 0 # 회의의 마지막 시간을 저장
 
-for i,j in time:
-    if i >= last:
+for i,j in time:    # 시작시간, 끝나는 시간
+    if i >= last:   # 회의를 할 회의의 시작시간이 현재 진행하고 있는 회의의 끝나는 시간보다 이후이면
+        last = j    # 회의를 했으니 끝나는 시간 변경
         cnt += 1
-        last = j
 
 print(cnt)

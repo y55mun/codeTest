@@ -30,3 +30,24 @@
 (183, 65), (180, 70), (170, 72)가 선발됩니다. (181, 60)은 (183, 65) 때문에 탈락하고, (172, 67)은
 (180, 70) 때문에 탈락합니다.
 '''
+
+n = int(input())
+people = []
+
+for _ in range(n):
+    h, w = map(int, input().split())
+    people.append((h,w))
+# people.sort(key=lambda x:(x[0], x[1]))    # x[0]을 1순위, x[1] 을 2순위로 해서 정렬
+# [(170, 72), (172, 67), (180, 70), (181, 60), (183, 65)]
+
+people.sort(reverse=True)
+
+cnt = 0
+largest = 0
+
+for s,e in people:
+    if e >= largest:
+        largest = e
+        cnt += 1
+
+print(cnt)

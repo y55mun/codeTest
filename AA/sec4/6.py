@@ -37,8 +37,6 @@ people = []
 for _ in range(n):
     h, w = map(int, input().split())
     people.append((h,w))
-# people.sort(key=lambda x:(x[0], x[1]))    # x[0]을 1순위, x[1] 을 2순위로 해서 정렬
-# [(170, 72), (172, 67), (180, 70), (181, 60), (183, 65)]
 
 people.sort(reverse=True)
 

@@ -17,7 +17,7 @@ def myadd(c):   # 새로 들어온 문자를 처리하는 함수
         myList[1] += 1
         if myList[1] == checkList[1]:
             checkSecret += 1
-    elif c == 'G'
+    elif c == 'G':
         myList[2] += 1
         if myList[2] == checkList[2]:
             checkSecret += 1

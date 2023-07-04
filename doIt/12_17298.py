@@ -14,5 +14,4 @@ for i in range(n):
         ans[stack.pop()] = a[i]
     stack.append(i)
 
-
 print(*ans)

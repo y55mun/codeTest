@@ -3,6 +3,7 @@ https://www.acmicpc.net/problem/11286
 """
 from queue import PriorityQueue
 import sys
+
 input = sys.stdin.readline
 
 n = int(input())

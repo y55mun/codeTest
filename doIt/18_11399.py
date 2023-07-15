@@ -26,7 +26,6 @@ for i in range(1, n):
     s[i] = s[i-1] + a[i]
 
 sum = 0
-
 for i in range(0, n):
     sum += s[i]
 

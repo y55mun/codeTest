@@ -9,9 +9,11 @@ a = list(input())
 
 for i in range(len(a)):
     maxx = i
+
     for j in range(i+1, len(a)):
         if a[j] > a[maxx]:
             maxx = j
+
     if a[i] < a[maxx]:
         a[i], a[maxx] = a[maxx], a[i]
 

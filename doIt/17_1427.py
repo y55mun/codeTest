@@ -18,4 +18,4 @@ for i in range(len(a)):
         a[i], a[maxx] = a[maxx], a[i]
 
 for i in range(len(a)):
-    print(a[i], end='')
+    print(a[i], end='')a

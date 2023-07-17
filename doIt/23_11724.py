@@ -3,6 +3,8 @@ https://www.acmicpc.net/problem/11724
 """
 
 import sys
+sys.setrecursionlimit(10000) #python이 정한 최대 깊이를 더 깊게 변경해줌
+
 input = sys.stdin.readline
 
 n, m = map(int, input().split())

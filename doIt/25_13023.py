@@ -1,6 +1,7 @@
 """ABCDE
 https://www.acmicpc.net/problem/13023
 """
+
 import sys
 input = sys.stdin.readline
 

@@ -21,3 +21,17 @@ def DFS(now, depth):
         if not visited[i]:
             DFS(i, depth+1)
     visited[now] = False
+
+for _ in range(m):
+    s, e = map(int, input().split())
+    a[s].append(e)
+    a[e].append(s)
+
+for i in range(n):
+    DFS(i, 1)
+    if arrive:
+        break
+    if arrive:
+        print(1)
+    else:
+        print(0)

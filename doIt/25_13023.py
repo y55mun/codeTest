@@ -10,21 +10,24 @@ arrive = False
 a = [[] for _ in range(n+1)]
 visited = [False] * (n+1)
 
+for _ in range(m):
+    s, e = map(int, input().split())
+    a[s].append(e)
+    a[e].append(s)
+
 def dfs(now, depth):
     global arrive
+    visited[now] = True
     if depth == 5:
         arrive = True
         return
-    visited[now] = True
+
     for i in a[now]:
         if not visited[i]:
-            dfs(now, depth+1)
+            dfs(i, depth+1)
     visited[now] = False
 
-for _ in range(m):
-    s,e = map(int, input().split())
-    a[s].append(e)
-    a[e].append(s)
+
 
 for i in range(n):
     dfs(i, 1)

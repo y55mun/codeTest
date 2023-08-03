@@ -1,7 +1,6 @@
 """ 소수찾기
 https://school.programmers.co.kr/learn/courses/30/lessons/42839
 """
-
 import itertools
 
 
@@ -19,18 +18,12 @@ def solution(numbers):
     answer = 0
     ans = []
 
-    for i in range(1, len(numbers)+1):
-        nPr = itertools.permutations(numbers, i)
-        ans = list(map(''.join, nPr))
-        print(set(ans))
+    for i in range(1, len(numbers) + 1):
+        ans.append(list(set(map(''.join, itertools.permutations(numbers, i)))))
+    per = list(set(map(int, set(sum(ans, [])))))
 
-    ans_set = set(ans)
-
-    #소수 판별
-    for i in ans_set:
-        if i == 1:
-            break
-        else:
-            i %
+    for i in per:
+        if isprime(i) == True:
+            answer += 1
 
     return answer

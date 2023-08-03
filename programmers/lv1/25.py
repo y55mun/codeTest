@@ -1,13 +1,29 @@
 """ 소수찾기
 https://school.programmers.co.kr/learn/courses/30/lessons/42839
 """
-from itertools import permutations
+import itertools
 
-def solution(n):
-    a = set()
-    for i in range(len(n)):
-        a |= set(map(int, map("".join, permutations(list(n), i + 1))))
-    a -= set(range(0, 2))
-    for i in range(2, int(max(a) ** 0.5) + 1):
-        a -= set(range(i * 2, max(a) + 1, i))
-    return len(a)
+
+def isprime(n):
+    if n < 2:
+        return False
+    else:
+        for i in range(2, int(n ** 0.5) + 1):
+            if n % i == 0:
+                return False
+        return True
+
+
+def solution(numbers):
+    answer = 0
+    ans = []
+
+    for i in range(1, len(numbers) + 1):
+        ans.append(list(set(map(''.join, itertools.permutations(numbers, i)))))
+    per = list(set(map(int, set(sum(ans, [])))))
+
+    for i in per:
+        if isprime(i) == True:
+            answer += 1
+
+    return answer

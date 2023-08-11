@@ -1,22 +1,18 @@
-"""네트워크
-https://school.programmers.co.kr/learn/courses/30/lessons/43162
+""" 타겟 넘버
+https://school.programmers.co.kr/learn/courses/30/lessons/43165
 """
 
-"""
-1. 아이디어
-- BFS로 풀기
+def solution(numbers, target):
+    sup = [0]   # 모든 계산 결과를 담자
 
-"""
+    for i in numbers:
+        sub = []
 
-def solution(n, computers):
-    answer = 0
-    connect = [[0] * n for _ in range(n)]
+        # 자손 노드
+        for j in sup:
+            sub.append(j + i)
+            sub.append(j - i)
 
-    for j in range(n):
-        for i in range(n):
-            if computers[j][i] == 1 or computers[i][j] == 1:
-                if i != j:
-                    print(i, j)
-                    answer += 1
+        sup = sub
 
-    return answer
+    return sup.count(target)

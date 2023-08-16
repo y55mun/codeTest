@@ -8,11 +8,10 @@ https://school.programmers.co.kr/learn/courses/30/lessons/43163
 
 """
 
-
 from collections import deque
 
 def solution(begin, target, words):
-    if target not in words:
+    if target not in words:  # 애초에 words리스트에 target값이 없다면 return 0
         return 0
 
     answer = 0
@@ -26,12 +25,13 @@ def solution(begin, target, words):
         if x == target:
             return cnt
 
+        # 단어를 모두 체크하면서, 해당 단어가 변경될 수 있는지 체크
         for i in range(len(words)):
-            diff = 0
+            diff = 0  # 다른 글자의 갯수
             word = words[i]
 
-            for j in range(len(x)):
-                if x[j] != word[j]:
+            for j in range(len(x)):  # 단어의 길이만큼 반복
+                if x[j] != word[j]:  # 단어에 알파벳 한개씩 체크하기
                     diff += 1
             if diff == 1:
                 q.append([word, cnt + 1])

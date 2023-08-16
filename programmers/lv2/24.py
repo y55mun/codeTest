@@ -2,12 +2,16 @@
 https://school.programmers.co.kr/learn/courses/30/lessons/43163
 """
 
+"""
+1. 아이디어
+- 최소 단계를 찾아야 하므로 bfs
+
+"""
+
+
 from collections import deque
 
 def solution(begin, target, words):
-    if target not in words:
-        return 0
-
     answer = 0
 
     q = deque()

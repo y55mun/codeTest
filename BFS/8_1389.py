@@ -24,7 +24,7 @@ def BFS(i):
                 visited[v] = visited[t]+1
                 queue.append(v)
     return sum(visited)
-
+6
 
 N, M = map(int, input().split())  # N:유저의 수, M: 친구관계 수
 edge_list = [[] for _ in range(N+1)]

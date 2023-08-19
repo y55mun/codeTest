@@ -2,11 +2,6 @@
 https://school.programmers.co.kr/learn/courses/30/lessons/1844
 """
 
-"""
-- 아이디어
-
-
-"""
 from collections import deque
 
 def solution(maps):

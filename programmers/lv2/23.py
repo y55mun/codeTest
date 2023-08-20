@@ -38,7 +38,7 @@ def solution(maps):
                     # 큐에 새로 추가
                     q.append((ny, nx))
 
-        # 상대 진영에 방문한 적이 없다면
+        # 상대 진영에 방문한 적이 없다면 -1 리턴
         if maps[len(maps) - 1][len(maps[0]) - 1] == 1:
             return -1
 

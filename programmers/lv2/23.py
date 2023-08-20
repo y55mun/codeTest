@@ -42,9 +42,9 @@ def solution(maps):
         if maps[len(maps) - 1][len(maps[0]) - 1] == 1:
             return -1
 
-        # 상대 진영에 방문했다면 기록 반환 (그래프의 가장 오른쪽 아래 반환)
+        # 상대 진영에 방문했다면 기록 반환
         else:
-            return maps[len(maps) - 1][len(maps[0]) - 1]
+            return maps[len(maps) - 1][len(maps[0]) - 1] # (그래프의 가장 오른쪽 아래 반환)
 
     answer = bfs(0, 0)
     return answer

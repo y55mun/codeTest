@@ -11,5 +11,6 @@ def solution(rectangle, characterX, characterY, itemX, itemY):
     q = deque()
     q.append([characterX * 2, characterY * 2])
     visited = [[0] * MAX for _ in range(MAX)]
+    visited[characterX * 2][characterY * 2] = 1
 
     return answer

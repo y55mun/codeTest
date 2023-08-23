@@ -7,6 +7,7 @@ def solution(rectangle, characterX, characterY, itemX, itemY):
     answer = 0
     MAX = 102
 
+
     # 길찾기
     q = deque()
     q.append([characterX * 2, characterY * 2])

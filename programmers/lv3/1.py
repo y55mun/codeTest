@@ -7,6 +7,16 @@ def solution(rectangle, characterX, characterY, itemX, itemY):
     answer = 0
     MAX = 102
 
+    field = [[5]* MAX for _ in range(MAX)]
+    for rec in rectangle:
+        x1, y1, x2, y2 = map(lambda x:x*2, rec)
+        for i in range(x1, x2+1):
+            for j in range(y1, y2+1):
+                if x1<i<x2 and y1<j<y2:
+                    field[i][j] = 0
+                elif field[i][j] != 0:
+                    field[i][j] = 1
+
 
     # 길찾기
     q = deque()

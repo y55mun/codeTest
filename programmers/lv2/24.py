@@ -5,7 +5,6 @@ https://school.programmers.co.kr/learn/courses/30/lessons/43163
 """
 1. 아이디어
 - 최소 단계를 찾아야 하므로 bfs
-
 """
 
 from collections import deque

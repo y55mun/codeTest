@@ -20,6 +20,7 @@ s	answer
 "(()("	false
 
 '''
+
 def solution(s):
     stack = []
 

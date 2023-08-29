@@ -3,6 +3,7 @@ https://www.acmicpc.net/problem/11724
 """
 
 import sys
+sys.setrecursionlimit(10000)
 input = sys.stdin.readline
 
 n, m = map(int, input().split())
@@ -26,4 +27,4 @@ for i in range(1, n+1):
         count += 1
         dfs(i)
 
-print(i)
+print(count)

@@ -18,8 +18,8 @@ def dfs(v):
 
 for _ in range(m):
     s, e = map(int, input().split())
-    a[s].append[e]
-    a[e].append[s]
+    a[s].append(e)
+    a[e].append(s)
 
 count = 0
 for i in range(1, n+1):

@@ -23,5 +23,10 @@ def DFS(number):
                 DFS(number*10 + i)  # 소수이면 자리수 늘림
 
 
+DFS(2)
+DFS(3)
+DFS(5)
+DFS(7)
+
 
 

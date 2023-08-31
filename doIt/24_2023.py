@@ -20,4 +20,8 @@ def DFS(number):
             if number %2 == 0:
                 continue
             else:
-                DFS()   # DFS 탐색 필요
+                DFS(number*10 + i)  # 소수이면 자리수 늘림
+
+
+
+

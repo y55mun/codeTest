@@ -3,6 +3,7 @@ https://www.acmicpc.net/problem/2023
 """
 
 import sys
+sys.setrecursionlimit(10000)
 input = sys.stdin.readline
 
 n = int(input())
@@ -27,6 +28,3 @@ DFS(2)
 DFS(3)
 DFS(5)
 DFS(7)
-
-
-

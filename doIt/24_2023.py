@@ -19,7 +19,7 @@ def DFS(number):
         print(number)
     else:
         for i in range(1, 10):
-            if number %2 == 0:
+            if i %2 == 0:
                 continue
             if isPrime(number*10 + i):
                 DFS(number*10 + i)  # 소수이면 자리수 늘림

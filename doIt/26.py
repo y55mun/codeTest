@@ -16,6 +16,7 @@ for _ in range(m):
     a[s].append(e)
     a[e].append(s)
 
+# 방문할 수 있는 노드가 여러개일 경우 번호가 작은 것을 먼저 방문하기 위해 정렬
 for i in range(n+1):
     a[i].sort()
 

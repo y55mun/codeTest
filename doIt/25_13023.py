@@ -1,9 +1,6 @@
 """ABCDE
 https://www.acmicpc.net/problem/13023
 
-1. 아이디어
-- 노드에 연결되어 있는 값들을 넣고 조건 확인
--
 """
 
 import sys

@@ -8,12 +8,12 @@ sys.setrecursionlimit(10000)
 input = sys.stdin.readline
 n, m = map(int, input().split())
 arrive = False
-a = [[] for _ in range(n)]
-visited = [False]*(n)
+a = [[] for _ in range(n+1)]
+visited = [False]*(n+1)
 
 def dfs(now,depth):
     global arrive
-    if depth == 4:
+    if depth == 5:
         arrive = True
         return
 
@@ -33,7 +33,7 @@ for _ in range(m):
 
 for i in range(n):
     # 노드마다 dfs 실행
-    dfs(i,0)
+    dfs(i, 1)
 
     if arrive:
         break

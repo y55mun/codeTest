@@ -6,7 +6,7 @@ import sys
 input = sys.stdin.readline
 
 n,m = map(int, input().split())
-a = [list(map(int, input().split())) for _ in range(n)]
+a = [list(map(int, input().strip())) for _ in range(n)]
 visited=[[False]*m for _ in range(n)]
 
 dy = [0, 1, 0, -1]

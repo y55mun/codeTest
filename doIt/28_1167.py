@@ -37,5 +37,17 @@ def bfs(v):
                 q.append(i[0])
                 distance[i[0]] = distance[now_node] + i[1]
 
+bfs(1)
+Max = 1
+
+for i in range(2, n+1):
+    if distance[Max] < distance[i]:
+        Max = i
+
+distance = [0] * (n+1)
+visited = [False] * (n+1)
+bfs(Max)
+distance.sort()
+print(distance[n])
 
 

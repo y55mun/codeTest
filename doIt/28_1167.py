@@ -25,3 +25,17 @@ for _ in range(n):
 distance = [0] * (n+1)
 visited = [False] * (n+1)
 
+def bfs(v):
+    q = deque()
+    q.append(v)
+    visited[v] = True
+    while q:
+        now_node = q.popleft()
+        for i in a[now_node]:
+            if not visited[i[0]]:
+                visited[i[0]] = True
+                q.append(i[0])
+                distance[i[0]] = distance[now_node] + i[1]
+
+
+

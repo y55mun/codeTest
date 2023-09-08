@@ -14,6 +14,7 @@ for _ in range(n):  # a 인접 리스트에 그래프 데이터 저장
     index = 0
     s = data[index]
     index += 1
+
     while True:
         e = data[index]
         if e == -1:

@@ -30,6 +30,7 @@ def bfs(v):
     q = deque()
     q.append(v)
     visited[v] = True   # visited 리스트에 현재 노드 방문 기록
+
     while q:    # 큐가 비어 있을 때까지 실행
         now_node = q.popleft()  # 큐에서 노드 데이터 가져오기
         for i in a[now_node]:   # 현재 노드의 연결 노드 까지 반복

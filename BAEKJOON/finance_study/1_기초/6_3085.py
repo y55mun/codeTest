@@ -17,3 +17,10 @@ n: int
 board: str[][]
 maxCnt: int
 """
+
+import sys
+input = sys.stdin.readline
+
+n = int(input())
+board = [list(input()) for _ in range(n)]
+maxCnt = 0

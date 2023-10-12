@@ -8,7 +8,7 @@ input = sys.stdin.readline
 r, c = map(int, input().split())
 garden = [list(input()) for _ in range(r)]
 
-k, v = 0, 0
+k, v = 0, 0 # 늑대, 양
 
 dy = [0, 1, 0, -1]
 dx = [1, 0, -1, 0]

@@ -28,6 +28,7 @@ def bfs(y, x):
 
         garden[y][x] = "#"
 
+        # 4방향 회전으로 탐색
         for k in range(4):
             ny = y + dy[k]
             nx = x + dx[k]

@@ -36,6 +36,7 @@ def check():
             else:
                 cnt = 1
         cnt = 1     # 열을 검사
+
         for j in range(1, n):
             if board[j][i] == board[j-1][i]:
                 cnt += 1

@@ -1,6 +1,7 @@
 """ 최대공약수와 최소공배수
 https://www.acmicpc.net/problem/2609
 """
+
 import sys
 input = sys.stdin.readline
 
@@ -13,4 +14,5 @@ def gcd(n,m):
         return gcd(m, n%m)
 
 print(gcd(n,m))
+
 print((n*m)// gcd(m,n))

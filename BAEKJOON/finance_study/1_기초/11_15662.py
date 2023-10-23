@@ -36,7 +36,7 @@ def solution(T, wheel, k, turn):
     return sum([wheel[i][0] for i in range(1, T+1)])
 
 T = int(input())
-wheel = [deque(map(int, input().strip())) for _ in range(T)]
+wheel = [0] + [deque(map(int, input().strip())) for _ in range(T)]
 k = int(input())
 turn = [list(map(int,input().split())) for _ in range(k)]
 

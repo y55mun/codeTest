@@ -20,11 +20,11 @@ up = N*M
 left = 0
 for i in range(N):
     for j in range(M):
-        if j==0:
+        if j==0:    # 맨 앞
             left += arr[i][j]
         else:
-            if arr[i][j-1] < arr[i][j]:
-                left += arr[i][j] - arr[i][j-1]
+            if arr[i][j-1] < arr[i][j]: # 다음 블록이 이전 블록 보다 크면
+                left += arr[i][j] - arr[i][j-1] # 그 차이 만큼 더하기기
 
 front = 0
 for j in range(M):

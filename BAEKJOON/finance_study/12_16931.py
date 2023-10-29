@@ -16,7 +16,6 @@ arr = [list(map(int, input().split())) for _ in range(N)]
 
 up = N*M
 
-
 left = 0
 for i in range(N):
     for j in range(M):

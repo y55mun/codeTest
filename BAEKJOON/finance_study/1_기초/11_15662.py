@@ -37,7 +37,7 @@ def solution(T, wheel, k, turn):
 
         # t 기어 회전
         wheel[t].rotate(direction)
-
+        print(turnElement)
         # t 기어와 맞닿는 극이 다른 기어 회전
         for element in turnElement:
             # 기준이 되는 톱니바퀴(t)의 바로 양 옆에 있는 것들은 반대로 돌지만,

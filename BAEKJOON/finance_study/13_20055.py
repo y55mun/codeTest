@@ -25,6 +25,7 @@ while 1:
                 robot[i] = 0
                 belt[i + 1] -= 1
         robot[-1] = 0  # 이 부분도 로봇 out -> 0임
+
     if robot[0] == 0 and belt[0] >= 1:
         robot[0] = 1
         belt[0] -= 1

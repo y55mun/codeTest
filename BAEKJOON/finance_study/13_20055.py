@@ -22,10 +22,7 @@ a = deque(map(int, input().split()))    # 내구도
 robot = deque([0]*n)    # 벨트 위에 있는 로봇
 result = 0
 
-while a.count(0) < k:
-    # if a.count(0) >= k:
-    #     break
-
+while True:
     a.rotate(1)
     robot.rotate(1)
     robot[-1] = 0
@@ -42,5 +39,6 @@ while a.count(0) < k:
         a[0] -= 1
     result += 1
 
-
+    if a.count(0) >= k:
+        break
 print(result)

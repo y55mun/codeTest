@@ -2,6 +2,7 @@
 풀이날짜: 23-11-03
 https://www.acmicpc.net/problem/21610
 
+참고: https://velog.io/@7h13200/Python%EB%B0%B1%EC%A4%80-21610%EB%B2%88-%EB%A7%88%EB%B2%95%EC%82%AC-%EC%83%81%EC%96%B4%EC%99%80-%EB%B9%84%EB%B0%94%EB%9D%BC%EA%B8%B0
 """
 import sys
 input = sys.stdin.readline

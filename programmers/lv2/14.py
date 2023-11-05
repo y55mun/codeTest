@@ -14,7 +14,7 @@ https://school.programmers.co.kr/learn/courses/30/lessons/12914
 n은 1 이상, 2000 이하인 정수입니다.
 입출력 예
 n	result
-4	5
+4	5_문자열
 3	3
 입출력 예 설명
 입출력 예 #1

@@ -1,4 +1,4 @@
-''' 수들의 합 5
+''' 수들의 합 5_문자열
 https://www.acmicpc.net/problem/2018
 투포인터
 '''

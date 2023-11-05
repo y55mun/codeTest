@@ -1,4 +1,4 @@
-""" A+B - 5
+""" A+B - 5_문자열
 https://www.acmicpc.net/problem/10952
 """
 

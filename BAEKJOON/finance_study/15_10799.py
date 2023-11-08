@@ -14,7 +14,7 @@ for i in range(len(ir)):
             stack.pop()
             cnt += len(stack)
 
-        else:   # 그 외 나머지 부분 카운ㅌ
+        else:   # 그 외 나머지 부분 카운트
             stack.pop()
             cnt += 1
 

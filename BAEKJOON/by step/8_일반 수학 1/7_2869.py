@@ -3,6 +3,7 @@ https://www.acmicpc.net/problem/2869
 """
 import sys
 input = sys.stdin.readline
+sys.setrecursionlimit(1000000)
 
 a, b, v = map(int, input().split())
 now_distance = 0  # 현재까지의 거리

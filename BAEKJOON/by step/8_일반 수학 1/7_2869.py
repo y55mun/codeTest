@@ -3,17 +3,12 @@ https://www.acmicpc.net/problem/2869
 """
 import sys
 input = sys.stdin.readline
-sys.setrecursionlimit(1000000)
 
 a, b, v = map(int, input().split())
-now_distance = 0  # 현재까지의 거리
-days = 1  # 올라가는데 걸린 날짜
 
-while now_distance < v:
-    now_distance += a
+days = (v-b) // (a-b)
 
-    if now_distance < v:
-        now_distance -= b
-
-        days += 1
-print(days)
+if days == int(days):
+    print(int(days))
+else:
+    print(int(days) + 1)

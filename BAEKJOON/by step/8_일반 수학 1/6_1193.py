@@ -14,8 +14,8 @@ if line % 2 == 0:
     a = num
     b = line - num + 1
 
-# 홀수 일 때때
-ele:
+# 홀수 일 때
+else:
     a = line-num+1
     b = num
 

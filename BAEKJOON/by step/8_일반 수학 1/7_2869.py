@@ -6,7 +6,7 @@ input = sys.stdin.readline
 
 a, b, v = map(int, input().split())
 
-days = (v-b) // (a-b)
+days = (v-b) / (a-b)
 
 if days == int(days):
     print(int(days))

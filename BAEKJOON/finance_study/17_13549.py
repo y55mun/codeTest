@@ -3,3 +3,4 @@ https://www.acmicpc.net/problem/13549
 """
 
 n, k = map(int, input().split())
+

@@ -5,25 +5,36 @@ https://www.acmicpc.net/problem/13549
 import sys
 from collections import deque
 
-def bfs():
-    graph = [-1] * 100001
-    graph[n] = 0
-    q = deque([n])
+input = sys.stdin.readline
+
+a, b = map(int, input().split())
+limit = 100001
+time = [0] * limit
+
+
+def bfs(x, y):
+    q = deque()
+    if x == 0:
+        q.append(1)
+    else:
+        q.append(x)
 
     while q:
-        target = q.popleft()
+        x = q.popleft()
+        if y == x:
+            return time[x]
 
-        if target == k:
-            return graph[target]
-
-        for i in (target+1, target-1, target*2):
-            if 0 <= i <= 100000 and graph[i] == -1:
-                if i == target*2:
-                    graph[i] = graph[target]
-                    q.appendleft(i)
+        for nx in (x - 1, x + 1, x * 2):
+            if 0 <= nx < limit and time[nx] == 0:
+                if nx == 2 * x:
+                    time[nx] = time[x]
+                    q.appendleft(nx)
                 else:
-                    graph[i] = graph[target] + 1
-                    q.append(i)
+                    time[nx] = time[x] + 1
+                    q.append(nx)
 
-n, k = map(int, sys.stdin.readline().split())
-print(bfs())
+
+if a == 0:
+    print(bfs(a, b) + 1)
+else:
+    print(bfs(a, b))

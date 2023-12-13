@@ -2,6 +2,10 @@
 https://www.acmicpc.net/problem/3009
 """
 
+"""
+아이디어: 좌표 3개 입력 받고, x,y 좌표를 따로 리스트에 저장 -> 혼자서 다른 x, y 좌표 출력
+"""
+
 x_points = []
 y_points = []
 

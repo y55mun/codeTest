@@ -1,21 +1,13 @@
-""" 쇠막대기
-https://www.acmicpc.net/problem/10799
 """
 
-ir = input()
+스택
+() 이걸 먼저 찾고: 레이저
+( 찾고 ) 찾아서 사이에 ()
+"""
+
+import sys
+input = sys.stdin.readline
+
+bar = input()
 stack = []
-cnt = 0
 
-for i in range(len(ir)):
-    if ir[i] == '(':
-        stack.append("(")
-    else:      # ')' 가 나올 2가지 경우
-        if ir[i-1] == "(":  # 이전이 '(' 이면 '('를 pop 하고 현재 스택에 있는 '(' 수 만큼 더하기
-            stack.pop()
-            cnt += len(stack)
-
-        else:   # 그 외 나머지 부분 카운트
-            stack.pop()
-            cnt += 1
-
-print(cnt)

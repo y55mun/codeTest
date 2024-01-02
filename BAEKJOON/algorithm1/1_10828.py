@@ -2,13 +2,13 @@
 https://www.acmicpc.net/problem/10828
 """
 import sys
-input = sys.stdin.readline()
+input = sys.stdin.readline
 
-n = int(input)
+n = int(input())
 stack = []
 
 for _ in range(n):
-    a = input.split()     # 명령어
+    a = input().split()     # 명령어
 
     if a[0] == 'push':
         stack.append(a[1])

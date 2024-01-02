@@ -1,6 +1,9 @@
 """ 스택
 https://www.acmicpc.net/problem/10828
 """
+import sys
+input = sys.stdin.readline()
+
 n = int(input())
 stack = []
 

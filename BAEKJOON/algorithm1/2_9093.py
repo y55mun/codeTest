@@ -5,6 +5,7 @@ https://www.acmicpc.net/problem/9093
 t = int(input())
 
 for _ in range(t):
-    str = input()
-    print(str[::-1])
+    str = input().split()
 
+    for i in str:
+        print(i[::-1], end=' ')

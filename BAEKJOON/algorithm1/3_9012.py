@@ -18,6 +18,7 @@ for _ in range(t):
             else:   # 스택에 괄호가 없을 경우
                 print("NO")
                 break
+
     else:   # break 문으로 끊기지 않고 수행됐을 경우 수행
         if not stack:   # 스택이 비어 있으면 괄호가 다 맞음
             print("YES")

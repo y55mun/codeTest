@@ -1,6 +1,9 @@
 """ 큐
 https://www.acmicpc.net/problem/10845
 """
+import sys
+from collections import deque
+
 input = sys.stdin.readline  # readline 뒤에 () 붙이니 에러 났었음
 
 dq = deque()
@@ -8,7 +11,7 @@ dq = deque()
 n = int(input())
 
 for i in range(n):
-    command = input().split()
+    command = input().strip().split()
 
     if command[0] == 'push':
         dq.append(command[1])

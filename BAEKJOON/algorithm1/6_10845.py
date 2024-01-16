@@ -4,12 +4,13 @@ https://www.acmicpc.net/problem/10845
 import sys
 from collections import deque
 
-input = sys.stdin.readline
+input = sys.stdin.readline  # readline 뒤에 () 붙이니 에러 났었음
 
 dq = deque()
 
 n = int(input())
-for _ in range(n):
+
+for i in range(n):
     command = input().split()
 
     if command[0] == 'push':

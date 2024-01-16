@@ -4,7 +4,7 @@ https://www.acmicpc.net/problem/10845
 import sys
 from collections import deque
 
-input = sys.stdin.readline  # readline 뒤에 () 붙이니 에러 났었음
+input = sys.stdin.readline()  # readline 뒤에 () 붙이니 에러 났었음
 
 dq = deque()
 
@@ -17,7 +17,7 @@ for i in range(n):
         dq.append(command[1])
     elif command[0] == 'pop':
         if len(dq) != 0:
-            print(dq.popleft()) ####
+            print(dq.popleft())
         else:
             print(-1)
     elif command[0] == 'size':

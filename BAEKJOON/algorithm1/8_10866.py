@@ -6,7 +6,6 @@ from collections import deque
 input = sys.stdin.readline
 
 dq = deque()
-
 n = int(input())
 
 for i in range(n):

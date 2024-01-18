@@ -8,8 +8,9 @@ input = sys.stdin.readline
 dq = deque()
 
 n = int(input())
-for i in range(n+1):
-    cmd = input().strip().split()
+
+for i in range(n):
+    cmd = input().split()
 
     if cmd[0] == 'push_back':
         dq.append(cmd[1])
@@ -17,12 +18,14 @@ for i in range(n+1):
         dq.appendleft(cmd[1])
     elif cmd[0] == 'pop_front':
         if len(dq) != 0:
-            print(dq.popleft())
+            print(dq[0])
+            dq.popleft()
         else:
             print(-1)
     elif cmd[0] == 'pop_back':
         if len(dq) != 0:
-            print(dq.pop())
+            print(dq[len(dq)-1])
+            dq.pop()
         else:
             print(-1)
     elif cmd[0] == 'size':
@@ -39,6 +42,6 @@ for i in range(n+1):
             print(-1)
     elif cmd[0] == 'back':
         if len(dq) != 0:
-            print(dq[-1])
+            print(dq[len(dq)-1])
         else:
             print(-1)

@@ -25,7 +25,7 @@ for i in data:
     if i == '<':
         check = True
         for _ in range(len(stack)):
-            result += stack.pop()
+            result += stack.pop()   # 마지막 요소 꺼내기
     stack.append(i)
 
     # 스택에 존재하는 값은 괄호안의 값이기에 순차적으로 추가

@@ -21,20 +21,21 @@ check = False  # 괄호가 있는지 체크
 data = input()
 
 for i in data:
-
+    # 스택에 존재하는 값을 역으로 추가
     if i == '<':
         check = True
         for _ in range(len(stack)):
             result += stack.pop()
     stack.append(i)
 
+    # 스택에 존재하는 값은 괄호안의 값이기에 순차적으로 추가
     if i == '>':
         check = False
         for _ in range(len(stack)):
             result += stack.pop(0)
 
+    # 스택에 존재하는 값을 역으로 추가
     if i == ' ' and check == False:
-        # stack.pop()
         for k in range(len(stack)):
             if k == 0:
                 stack.pop()

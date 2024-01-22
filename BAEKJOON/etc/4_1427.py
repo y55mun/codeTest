@@ -1,5 +1,5 @@
 """ 소트인사이드
-- 풀이 날짜:
+- 풀이 날짜: 2024-01-22
 https://www.acmicpc.net/problem/1427
 """
 a = list(input())

@@ -1,5 +1,5 @@
 """ 수 정렬하기
-- 푼 날짜:
+- 푼 날짜: 2024-01-22
 https://www.acmicpc.net/problem/2750
 """
 n = int(input())

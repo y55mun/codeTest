@@ -18,6 +18,7 @@ for i in range(1, n+1):
 for i in range(n, 0, -1):
     if i+t[i] > n+1:    # i번째 상담을 퇴사일까지 끝낼 수 없을 때
         d[i] = d[i+1]
+
     else:   # i번째 상담을 퇴사일까지 끝낼 수 있을 때
         d[i] = max(d[i+1], p[i]+d[i+t[i]])
 

@@ -1,5 +1,7 @@
 """ 이친수
 https://www.acmicpc.net/problem/2193
+
+d[i][j]: 길이 i 인 이친수가 j로 끝나는 개수(경우의 수)
 """
 
 import sys

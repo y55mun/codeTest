@@ -21,7 +21,6 @@ for i in range(2, n+1):
         d[i][j] = (d[i-1][j-1] + d[i-1][j+1]) % mod
 
 sum = 0
-
 for i in range(10):
     sum = (sum+d[n][i]) % mod
 

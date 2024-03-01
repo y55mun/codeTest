@@ -17,5 +17,6 @@ while True:
             num_count += 1  # 자리수 카운트
         else:   # n의 배수가 아닐 경우 종료
             break
+
     print(num_count)
 

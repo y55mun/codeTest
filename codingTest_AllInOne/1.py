@@ -4,7 +4,6 @@ https://leetcode.com/problems/valid-parentheses/description/
 
 s = input()
 
-
 stack = []
 for p in s:
     if p == '{':

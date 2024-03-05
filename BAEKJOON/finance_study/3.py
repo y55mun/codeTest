@@ -15,4 +15,5 @@ def bfs(root):
             q.append(cur_node.left)
         if cur_node.right:
             q.append(cur_node.right)
+
     return visited

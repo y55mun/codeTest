@@ -1,9 +1,11 @@
 from collections import deque
 
-def bfs(root):
+def levelorder(root):
     visited = []
+
     if root is None:
         return 0
+
     q = deque()
     q.append(root)
 
@@ -15,5 +17,4 @@ def bfs(root):
             q.append(cur_node.left)
         if cur_node.right:
             q.append(cur_node.right)
-
     return visited

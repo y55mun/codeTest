@@ -1,8 +1,7 @@
 from collections import deque
 
-def levelorder(root):
+def levelOrder(root):
     visited = []
-
     if root is None:
         return 0
 
@@ -17,4 +16,5 @@ def levelorder(root):
             q.append(cur_node.left)
         if cur_node.right:
             q.append(cur_node.right)
+
     return visited

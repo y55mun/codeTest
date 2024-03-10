@@ -14,6 +14,7 @@ def levelOrder(root):
 
         if cur_node.left:
             q.append(cur_node.left)
+
         if cur_node.right:
             q.append(cur_node.right)
 

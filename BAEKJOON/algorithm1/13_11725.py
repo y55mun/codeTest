@@ -27,6 +27,7 @@ q.append(1)
 
 while q:
     cur_node = q.popleft()
+
     for next in trees[cur_node]:
         if not visited[next]:
             visited[next] = cur_node

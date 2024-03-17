@@ -3,9 +3,6 @@ https://www.acmicpc.net/problem/11725
 - 푼 날짜: 24-03-13
 - 재풀이 날짜:
 
-아이디어
-트리를 만든다.
-트리를 순회한다.
 """
 
 import sys

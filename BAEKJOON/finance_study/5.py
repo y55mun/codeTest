@@ -20,25 +20,25 @@ def solution(n, m, hole):
     q.append((0, 0, False))
 
     while q:
-        ex, ey, used = q.popleft()
+        for _ in range(len(q)):
+            ex, ey, used = q.popleft()
+            for k in range(4):
+                nx = ex + dx[k]
+                ny = ey + dy[k]
 
-        for k in range(4):
-            nx = ex + dx[k]
-            ny = ey + dy[k]
-
-            if 0 <= nx < n and 0 <= ny < m and not visited[nx][ny][used] and board[nx][ny] == 0:
-                if (nx, ny) == (n - 1, m - 1):
-                    return ans + 1
-                visited[nx][ny][used] = True
-                q.append((nx, ny, used))
-            if not used:
-                nx += dx[k]
-                ny += dy[k]
-                if 0 <= nx < n and 0 <= ny < m and not visited[nx][ny][True] and board[nx][ny] == 0:
+                if 0 <= nx < n and 0 <= ny < m and not visited[nx][ny][used] and board[nx][ny] == 0:
                     if (nx, ny) == (n - 1, m - 1):
                         return ans + 1
-                    visited[nx][ny][True] = True
-                    q.append((nx, ny, True))
+                    visited[nx][ny][used] = True
+                    q.append((nx, ny, used))
+                if not used:
+                    nx += dx[k]
+                    ny += dy[k]
+                    if 0 <= nx < n and 0 <= ny < m and not visited[nx][ny][True] and board[nx][ny] == 0:
+                        if (nx, ny) == (n - 1, m - 1):
+                            return ans + 1
+                        visited[nx][ny][True] = True
+                        q.append((nx, ny, True))
         ans += 1
 
     return -1

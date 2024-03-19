@@ -26,7 +26,6 @@ def solution(n, m, hole):
                 nx = ex + dx[k]
                 ny = ey + dy[k]
 
-
                 # 1: 함정이 없는 위치로 이동이 가능한 경우
                 # 새 위치가 보드 내에 있고, 아직 지나가지 않았고, 함정이 아니라면 큐에 다음 자리 추가
                 if 0 <= nx < n and 0 <= ny < m and not visited[nx][ny][used] and board[nx][ny] == 0:

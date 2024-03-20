@@ -50,8 +50,4 @@ def solution(n, m, hole):
 
     return -1
 
-n = 4
-m = 4
-hole = [[2, 3], [3, 3]]
-
 print(solution(n, m, hole))

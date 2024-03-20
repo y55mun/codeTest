@@ -49,5 +49,3 @@ def solution(n, m, hole):
         ans += 1
 
     return -1
-
-print(solution(n, m, hole))

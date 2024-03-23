@@ -11,6 +11,7 @@ def solution(n, m, hole):
     dx = [1, 0, -1, 0]
 
     board = [[0] * m for _ in range(n)]  # m개짜리가 n개 생김
+
     for a, b in hole:
         board[a - 1][b - 1] = 1
 

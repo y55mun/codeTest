@@ -11,4 +11,5 @@ for i in range(4, n+1):
         dp[i] = dp[i-2]*3 + sum(dp[:i-2])*2 + 2
     else:
         dp[i] = 0
+
 print(dp[n])

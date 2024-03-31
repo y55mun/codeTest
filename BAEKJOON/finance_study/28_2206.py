@@ -37,8 +37,7 @@ def bfs():
 row_len, col_len = map(int, input().split())
 grid = [list(map(int, input())) for _ in range(row_len)]
 
-# visited = [[[0, 0] * col_len] for _ in range(row_len)]
-visited = [[[0] * 2 for _ in range(col_len)] for _ in range(row_len)]
+visited = [[[0, 0] * col_len] for _ in range(row_len)]    # 이건 안됨
 visited[0][0][0] = 1
 
 directions = [(1,0), (-1,0), (0,1), (0,-1)]

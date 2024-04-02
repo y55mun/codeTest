@@ -2,7 +2,6 @@
 https://school.programmers.co.kr/learn/courses/19344/lessons/242258
 """
 
-
 def solution(bandage, health, attacks):
     max_health = health
     t, x, y = bandage

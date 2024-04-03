@@ -6,6 +6,7 @@ def solution(bandage, health, attacks):
     max_health = health
     t, x, y = bandage
     end_time = attacks[-1][0]
+
     cur_t = 0
     cur_health = health
 

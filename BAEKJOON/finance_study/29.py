@@ -38,5 +38,5 @@ def solutions(jobs):
     ans = ans // len(jobs)  # 평균 처리 시간 계산
     return ans
 
-# jobs = [[0, 3], [1, 9], [2, 6]]     #  [작업이 요청되는 시점, 작업의 소요시간]
-# print(solutions(jobs))
+jobs = [[0, 3], [1, 9], [2, 6]]     #  [작업이 요청되는 시점, 작업의 소요시간]
+print(solutions(jobs))

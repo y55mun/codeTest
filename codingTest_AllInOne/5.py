@@ -6,6 +6,7 @@ n = int(input())
 
 def climbStairs(n):
     memo = [-1] * (n + 1)
+
     def dp(n):
         if n==0 or n== 1:
             return 1

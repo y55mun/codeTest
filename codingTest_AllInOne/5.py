@@ -15,4 +15,4 @@ def climbStairs(n):
         return memo[n]
     return dp(n)
 
-print(climbStairs(n))
+# print(climbStairs(n))

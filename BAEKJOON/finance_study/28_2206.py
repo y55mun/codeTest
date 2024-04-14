@@ -42,4 +42,4 @@ visited[0][0][0] = 1
 
 directions = [(1,0), (-1,0), (0,1), (0,-1)]
 
-print(bfs())
+# print(bfs())
